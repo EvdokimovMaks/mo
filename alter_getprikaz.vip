@@ -1,0 +1,30 @@
+#include replacequotes.vih
+#component "F_PODOT"
+
+alter interface GETPRIKAZ;
+var
+  _EC: C_EXTCLASS::iExtClass;
+  RplQts: KADRY2::replacequotes;
+window WIPRIKAZ
+
+handleevent
+cmPrintDoc:
+{
+  if pos('нет в налич', locase(_EC.GetSegName(CLASSCODE_RESOL, prikaz.nrec))) > 0 and
+     prikaz.mesto = 'за пределы Российской Федерации' then
+{
+  if message('Внимание! У сотрудника нет разрешения на выезд! Продолжить?',yesNo) = cmYes
+  {
+    inherited::handleevent(cmPrintDoc);
+    RplQts.ReplaceQuotes(replace(translatepath(GetStringParameter('Files', 'OutputFilesDirectory', 0)+'\KomPrik.rtf'),'\\','\'));
+  }
+}
+  else
+  {
+    inherited::handleevent(cmPrintDoc);
+    RplQts.ReplaceQuotes(replace(translatepath(GetStringParameter('Files', 'OutputFilesDirectory', 0)+'\KomPrik.rtf'),'\\','\'));
+  }
+}
+end;
+end;
+end.

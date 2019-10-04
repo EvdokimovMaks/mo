@@ -1,0 +1,18 @@
+#ifndef _oPadeg_
+#define _oPadeg_
+
+objinterface oPadeg;
+  function GetFullAppointmentPadeg(appointment: string; department: string; nPadeg: integer): string;
+  function GetFIOPadeg(LastName, FirstName, MiddleName, Sex: string; nPadeg: integer): string;
+  function GetIFPadeg(FirstName, LastName, Sex: string; nPadeg: integer): string;
+  function GetAppointmentPadeg(appointment: string; nPadeg: integer): string;
+  function GetDepartmentPadeg(Department: string; nPadeg: integer): string;
+  property OleDescr: longint read;
+end;
+vipinterface iPadeg implements oPadeg licensed(free);
+  public:
+    constructor init;
+    destructor done;
+end;
+
+#end

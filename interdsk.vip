@@ -1,0 +1,33 @@
+#component "MINOBR"
+interface rep_fire 'Настройки отчёта', escclose, doaccept;
+var
+  f: word;
+
+parameters f;
+
+screen sc1;
+
+fields
+ f: noprotect;
+
+ buttons
+ cmOk, default;
+
+<<
+
+  [.] произвести расчет и выдать трудовую `
+  [.] выплатить трёхкратный месячный оклад `
+  [.] вывести причину увольнения `
+  [.] вывести основание `
+                   <. ОК .>
+>>
+end;
+
+handleevent
+cmOk:
+{
+  putcommand(cmdefault);
+}
+end;
+
+end.

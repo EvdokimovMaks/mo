@@ -1,0 +1,40 @@
+#include replacequotes.vih
+#COMPONENT "KADRY2"
+
+interface replacequotes;
+ procedure ReplaceQuotes(filename: string);
+ {
+  delay(1000);
+
+  var vbsFileName: string;
+  vbsFileName := translatepath(GetStringParameter('Files', 'OutputFilesDirectory', 0)+'\ReplaceQuotes.vbs');
+
+  if FileExist(vbsFileName) DeleteFile(vbsFileName);
+
+  logstrtofile(vbsFileName,'Function IsLetterOrNumber(ch)                                                                 ');
+  logstrtofile(vbsFileName,'  Dim c                                                                                       ');
+  logstrtofile(vbsFileName,'  c = Asc(UCase(ch))                                                                          ');
+  logstrtofile(vbsFileName,'  IsLetterOrNumber = (c >= 65 And c <= 90) Or (c >= 192 And c <= 223) Or (c >= 48 And c <= 57)');
+  logstrtofile(vbsFileName,'End Function                                                                                  ');
+  logstrtofile(vbsFileName,'On Error Resume Next                                                                          ');
+  logstrtofile(vbsFileName,'Dim app, doc, r                                                                               ');
+  logstrtofile(vbsFileName,'Set app = GetObject(,"Word.Application")                                                      ');
+  logstrtofile(vbsFileName,'If not (IsEmpty(app)) Then                                                                    ');
+  logstrtofile(vbsFileName,'  Set doc = app.Documents("'+filename+'")                                                     ');
+  logstrtofile(vbsFileName,'  If not (IsEmpty(doc)) Then                                                                  ');
+  logstrtofile(vbsFileName,'    Set r = doc.Content                                                                       ');
+  logstrtofile(vbsFileName,'    While r.Find.Execute("""^?")                                                              ');
+  logstrtofile(vbsFileName,'      If IsLetterOrNumber(r.Characters(2)) Then                                               ');
+  logstrtofile(vbsFileName,'          r.Text = Chr(171) + r.Characters(2)                                                 ');
+  logstrtofile(vbsFileName,'      ElseIf IsLetterOrNumber(r.Previous(1)) Then                                             ');
+  logstrtofile(vbsFileName,'          r.Text = Chr(187) + r.Characters(2)                                                 ');
+  logstrtofile(vbsFileName,'      End If                                                                                  ');
+  logstrtofile(vbsFileName,'    Wend                                                                                      ');
+  logstrtofile(vbsFileName,'  End If                                                                                      ');
+  logstrtofile(vbsFileName,'  app.windowstate = 1                                                                         ');
+  logstrtofile(vbsFileName,'End If                                                                                        ');
+
+  var errCode: integer;
+  ExecProgram('start', vbsFileName, 'Замена кавычек', pfSilent+pfDontWait, errCode);
+ }
+end.

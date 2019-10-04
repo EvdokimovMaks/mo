@@ -1,0 +1,22 @@
+#component "Z_STAFFCAT"
+
+alter interface PICKCATALOG2;
+handleevent
+cminit:
+{
+  if iEntryPoint <> -11
+  {
+    cfsSetCurrentContainer('TRCAT');
+
+    cfsSetProp('Field: CATALOGS.SDOPINF', 'Visible', FALSE);
+    cfsSetProp('Field: CATALOGS.SDOPINF', 'Hidden', TRUE);
+
+    cfsSetProp('ExtClass: CATALOGS,281474976710675', 'Visible', FALSE);
+    cfsSetProp('ExtClass: CATALOGS,281474976710675', 'Hidden', TRUE);
+
+    inherited::handleevent(cminit);
+  }
+  else inherited::handleevent(cminit);
+}
+end;
+end.

@@ -1,0 +1,1144 @@
+// RPD_1 (PRIKAZ)
+// RPD_1 (ORDERSLIST)
+// RPD_100
+// RPD_31
+// RPD_32
+// RPD_40
+// RPD_41
+// RPD_5
+// RPD_50
+// RPD_6
+// RPD_65
+// RPD_8
+// RPD_9
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_1' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::PRIKAZ->Z_STAFFORDERS::WINDOWOFORDER->';
+  object BRPSN : Browser {
+    Hidden = True;
+    StatusCtx = 6942;
+    RectB_Y = 1.0;
+    object 'c_BRPSN_FIRSTNAMEPODR_Подразделение' : Column {
+      StatusCtx = 16989;
+      DefaultPickButton = False;
+    } // c_BRPSN_FIRSTNAMEPODR_Подразделение : Column
+    object 'c_BRPSN_PERSONS.FIO_ФИО' : Column {
+      Protect = False;
+      StatusCtx = 16989;
+      DefaultPickButton = False;
+    } // c_BRPSN_PERSONS.FIO_ФИО : Column
+    object 'c_BRPSN_PERSONS.STRTABN_Табельный_N' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSONS.STRTABN_Табельный_N : Column
+    object 'c_BRPSN_CATALOGS.NAME_Должность' : Column {
+      DefaultPickButton = False;
+    } // c_BRPSN_CATALOGS.NAME_Должность : Column
+    object 'c_BRPSN_PERSORDERSTATEISP_Исполнение' : Column {
+      Visible = False;
+      DefaultPickButton = False;
+    } // c_BRPSN_PERSORDERSTATEISP_Исполнение : Column
+  } // BRPSN : Browser
+  object FIRSTSCR : Screen {
+    RectA_Y = 1.0;
+    RectB_Y = 8.0;
+    object 'i_FIRSTSCR_CONTDOC.WDOPATTR' : PanelInputLine {
+      Strings = ( // Список строк
+        'Обычное оформление приказа';
+        'Первичное трудоустройство, но личная карточка уже заполнена';
+        'Перевод из другого филиала (распределенная БД)';
+        'Повторное трудоустройство';
+        'Повторное трудоустройство в новом филиале';
+      )
+      EnumValues = ( // Список целых
+        0;
+        1;
+        2;
+        3;
+        5;
+      )
+    } // i_FIRSTSCR_CONTDOC.WDOPATTR : PanelInputLine
+    object 'L_FIRSTSCR_Вариант_л\с_и_карточки' : Label {
+      Visible = False;
+    } // L_FIRSTSCR_Вариант_л\с_и_карточки : Label
+    object 'i_FIRSTSCR_CONTDOC.WORDER' : PanelInputLine {
+      Visible = False;
+      Skip = True;
+    } // i_FIRSTSCR_CONTDOC.WORDER : PanelInputLine
+    object 'L_FIRSTSCR_Код_ИНН' : Label {
+      Visible = False;
+    } // L_FIRSTSCR_Код_ИНН : Label
+    object i_FIRSTSCR_CODEINN : PanelInputLine {
+      Visible = False;
+    } // i_FIRSTSCR_CODEINN : PanelInputLine
+  } // FIRSTSCR : Screen
+  object SCRDOC : Screen {
+    RectA_Y = 8.0;
+    object i_SCRDOC_OSOB_USL : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRDOC_OSOB_USL : PanelInputLine
+    object i_SCRDOC_SCDLASTUSER : PanelInputLine {
+      Skip = True;
+    } // i_SCRDOC_SCDLASTUSER : PanelInputLine
+    object 'b_SCRDOC_>>' : Button {
+      Skip = True;
+    } // b_SCRDOC_>> : Button
+    object 'L_SCRDOC_ИФ' : Label {
+      Visible = False;
+    } // L_SCRDOC_ИФ : Label
+    object i_SCRDOC_FULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRDOC_FULLIF : PanelInputLine
+    object 'T_SCRDOC_Основание' : StaticText {
+      Title = 'Основание трудового договора';
+      Origin_Y = 263;
+    } // T_SCRDOC_Основание : StaticText
+    object 'i_SCRDOC_APPOINTMENTS.FOUNDATION' : PanelInputLine {
+      Origin_X = 185;
+      Size_X = 422;
+    } // i_SCRDOC_APPOINTMENTS.FOUNDATION : PanelInputLine
+    object 'i_SCRDOC_INFPSN1.STR1' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDOC_INFPSN1.STR1 : PanelInputLine
+  } // SCRDOC : Screen
+} // Z_STAFFORDERS::RPD_1 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_1' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    StatusCtx = 6942;
+    object 'c_BRPSN_FIRSTNAMEPODR_Подразделение' : Column {
+      StatusCtx = 16989;
+      DefaultPickButton = False;
+    } // c_BRPSN_FIRSTNAMEPODR_Подразделение : Column
+    object 'c_BRPSN_PERSONS.FIO_ФИО' : Column {
+      Protect = False;
+      StatusCtx = 16989;
+      DefaultPickButton = False;
+    } // c_BRPSN_PERSONS.FIO_ФИО : Column
+    object 'c_BRPSN_PERSONS.STRTABN_Табельный_N' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSONS.STRTABN_Табельный_N : Column
+    object 'c_BRPSN_CATALOGS.NAME_Должность' : Column {
+      DefaultPickButton = False;
+    } // c_BRPSN_CATALOGS.NAME_Должность : Column
+    object 'c_BRPSN_PERSORDERSTATEISP_Исполнение' : Column {
+      Visible = False;
+      DefaultPickButton = False;
+    } // c_BRPSN_PERSORDERSTATEISP_Исполнение : Column
+  } // BRPSN : Browser
+  object FIRSTSCR : Screen {
+    object 'i_FIRSTSCR_CONTDOC.WDOPATTR' : PanelInputLine {
+      Strings = ( // Список строк
+        'Обычное оформление приказа';
+        'Первичное трудоустройство, но личная карточка уже заполнена';
+        'Перевод из другого филиала (распределенная БД)';
+        'Повторное трудоустройство';
+        'Повторное трудоустройство в новом филиале';
+      )
+      EnumValues = ( // Список целых
+        0;
+        1;
+        2;
+        3;
+        5;
+      )
+    } // i_FIRSTSCR_CONTDOC.WDOPATTR : PanelInputLine
+    object 'L_FIRSTSCR_Вариант_л\с_и_карточки' : Label {
+      Visible = False;
+    } // L_FIRSTSCR_Вариант_л\с_и_карточки : Label
+    object 'i_FIRSTSCR_CONTDOC.WORDER' : PanelInputLine {
+      Visible = False;
+      Skip = True;
+    } // i_FIRSTSCR_CONTDOC.WORDER : PanelInputLine
+    object 'L_FIRSTSCR_Код_ИНН' : Label {
+      Visible = False;
+    } // L_FIRSTSCR_Код_ИНН : Label
+    object i_FIRSTSCR_CODEINN : PanelInputLine {
+      Visible = False;
+    } // i_FIRSTSCR_CODEINN : PanelInputLine
+  } // FIRSTSCR : Screen
+  object SCRDOC : Screen {
+    object 'i_SCRDOC_CONTDOC.DPRIK' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_CONTDOC.DPRIK : PanelInputLine
+    object 'i_SCRDOC_APPOINTMENTS.DATEEND' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_APPOINTMENTS.DATEEND : PanelInputLine
+    object 'i_SCRDOC_DOGCAT.NAME' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_DOGCAT.NAME : PanelInputLine
+    object 'i_SCRDOC_APPOINTMENTS.CONTRACTDATE' : PanelInputLine {
+      Origin_X = 289;
+      FontBackColor = '17';
+    } // i_SCRDOC_APPOINTMENTS.CONTRACTDATE : PanelInputLine
+    object 'i_SCRDOC_APPOINTMENTS.CONTRACTNMB' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_APPOINTMENTS.CONTRACTNMB : PanelInputLine
+    object i_SCRDOC_FULLNAMEPODR : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_FULLNAMEPODR : PanelInputLine
+    object 'i_SCRDOC_APPPOSTCAT.NAME' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_APPPOSTCAT.NAME : PanelInputLine
+    object i_SCRDOC_OSOB_USL : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRDOC_OSOB_USL : PanelInputLine
+    object i_SCRDOC_SCDLASTUSER : PanelInputLine {
+      Skip = True;
+    } // i_SCRDOC_SCDLASTUSER : PanelInputLine
+    object 'b_SCRDOC_>>' : Button {
+      Skip = True;
+    } // b_SCRDOC_>> : Button
+    object 'L_SCRDOC_ИФ' : Label {
+      Visible = False;
+    } // L_SCRDOC_ИФ : Label
+    object i_SCRDOC_FULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRDOC_FULLIF : PanelInputLine
+    object 'T_SCRDOC_Основание' : StaticText {
+      Title = 'Основание трудового договора';
+      Origin_X = 7;
+      Origin_Y = 263;
+    } // T_SCRDOC_Основание : StaticText
+    object 'i_SCRDOC_APPOINTMENTS.FOUNDATION' : PanelInputLine {
+      Origin_X = 180;
+      Size_X = 427;
+      FontBackColor = '17';
+    } // i_SCRDOC_APPOINTMENTS.FOUNDATION : PanelInputLine
+    object 'i_SCRDOC_INFPSN1.STR1' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDOC_INFPSN1.STR1 : PanelInputLine
+  } // SCRDOC : Screen
+} // Z_STAFFORDERS::RPD_1 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_100' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET100 : Screen {
+    object 'T_SCRDET100_Основание' : StaticText {
+      Origin_X = 17;
+      Origin_Y = 80;
+    } // T_SCRDET100_Основание : StaticText
+    object 'i_SCRDET100_CONTDOC.SBOTTOM' : PanelInputLine {
+      Origin_X = 100;
+      Origin_Y = 80;
+      Size_X = 540;
+      FontBackColor = '17';
+    } // i_SCRDET100_CONTDOC.SBOTTOM : PanelInputLine
+    object 'b_SCRDET100_Содержание_раздела' : Button {
+      Origin_X = 17;
+      Origin_Y = 120;
+    } // b_SCRDET100_Содержание_раздела : Button
+    object 'b_SCRDET100_Примечание' : Button {
+      Origin_X = 508;
+      Origin_Y = 120;
+    } // b_SCRDET100_Примечание : Button
+    // Информация: объект "'ExtClass: CONTDOC,7'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: CONTDOC,7' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: CONTDOC,7,0,22,1,ФИО исполняющего обязанности';
+      DefaultValue = '';
+      Origin_X = 240;
+      Origin_Y = 40;
+      Size_X = 400;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: CONTDOC,7 : PanelInputLine
+    // Информация: объект "'LbExtClass: CONTDOC,7'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: CONTDOC,7' : Label {
+      Original = False;
+      Title = 'ФИО исполняющего обязанности';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 17;
+      Origin_Y = 40;
+      Size_X = 170;
+      Size_Y = 14;
+    } // LbExtClass: CONTDOC,7 : Label
+    // Информация: объект "'ExtClass: CONTDOC,8'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: CONTDOC,8' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: CONTDOC,8,0,23,1,Должность исполняющего обязанности';
+      DefaultValue = '';
+      Origin_X = 240;
+      Origin_Y = 60;
+      Size_X = 400;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: CONTDOC,8 : PanelInputLine
+    // Информация: объект "'LbExtClass: CONTDOC,8'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: CONTDOC,8' : Label {
+      Original = False;
+      Title = 'Должность исполняющего обязанности';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 17;
+      Origin_Y = 60;
+      Size_X = 203;
+      Size_Y = 14;
+    } // LbExtClass: CONTDOC,8 : Label
+    // Информация: объект "'ExtAttr: CONTDOC,75'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtAttr: CONTDOC,75' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 148;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtAttr: CONTDOC,75,2,0,0,0,Дата ';
+      DefaultValue = '';
+      Origin_X = 100;
+      Origin_Y = 20;
+      Size_X = 80;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 256;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 10;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtAttr: CONTDOC,75 : PanelInputLine
+    // Информация: объект "'LbExtAttr: CONTDOC,75'" типа Label не найден в базовой конфигурации!
+    object 'LbExtAttr: CONTDOC,75' : Label {
+      Original = False;
+      Title = 'Дата с';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 17;
+      Origin_Y = 20;
+      Size_X = 50;
+      Size_Y = 14;
+    } // LbExtAttr: CONTDOC,75 : Label
+  } // SCRDET100 : Screen
+} // Z_STAFFORDERS::RPD_100 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_31' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSONS.STRTABN_Табельный_N' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSONS.STRTABN_Табельный_N : Column
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET31 : Screen {
+    object 'i_SCRDET31_PUNCATALOG.NAME' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET31_PUNCATALOG.NAME : PanelInputLine
+    object 'i_SCRDET31_TYPEPUNCAT.NAME' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET31_TYPEPUNCAT.NAME : PanelInputLine
+    object 'i_SCRDET31_PUNISHMENTS.DAT1' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET31_PUNISHMENTS.DAT1 : PanelInputLine
+    object 'T_SCRDET31_Примечание_(мотив)' : StaticText {
+      Title = 'Нарушение';
+    } // T_SCRDET31_Примечание_(мотив) : StaticText
+    object 'i_SCRDET31_PUNISHMENTS.SNOTE' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET31_PUNISHMENTS.SNOTE : PanelInputLine
+  } // SCRDET31 : Screen
+} // Z_STAFFORDERS::RPD_31 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_32' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSONS.STRTABN_Табельный_N' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSONS.STRTABN_Табельный_N : Column
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object MY_PUNISHMENTS : Screen {
+    object 'i_MY_PUNISHMENTS_PUNCATALOG.NAME' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_MY_PUNISHMENTS_PUNCATALOG.NAME : PanelInputLine
+    object 'i_MY_PUNISHMENTS_CONTDOC.DAT2' : PanelInputLine {
+      Origin_X = 184;
+      Origin_Y = 82;
+      FontBackColor = '17';
+    } // i_MY_PUNISHMENTS_CONTDOC.DAT2 : PanelInputLine
+  } // MY_PUNISHMENTS : Screen
+} // Z_STAFFORDERS::RPD_32 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_40' : InterfaceWindow {
+  Palette = 0;
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    StatusCtx = 16990;
+    object 'c_BRPSN_CONTDOC.WATTRDOC2_Вид_назначения' : Column {
+      Protect = False;
+    } // c_BRPSN_CONTDOC.WATTRDOC2_Вид_назначения : Column
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET40 : Screen {
+    StatusCtx = 16991;
+    object 'i_SCRDET40_CONTDOC.FILIALNO' : PanelInputLine {
+      Protect = False;
+    } // i_SCRDET40_CONTDOC.FILIALNO : PanelInputLine
+    object i_SCRDET40_FNOTPUS : PanelInputLine {
+      Protect = False;
+      StatusCtx = 16990;
+      DefaultPickButton = True;
+      FontBackColor = '17';
+    } // i_SCRDET40_FNOTPUS : PanelInputLine
+    object 'i_SCRDET40_OTPOTZ.DATAN' : PanelInputLine {
+      StatusCtx = 16990;
+      DefaultPickButton = True;
+      FontBackColor = '17';
+    } // i_SCRDET40_OTPOTZ.DATAN : PanelInputLine
+    object 'i_SCRDET40_OTPOTZ.DATOK' : PanelInputLine {
+      StatusCtx = 16990;
+      DefaultPickButton = True;
+      FontBackColor = '17';
+    } // i_SCRDET40_OTPOTZ.DATOK : PanelInputLine
+    object 'i_SCRDET40_OTPOTZ.KOLDN' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET40_OTPOTZ.KOLDN : PanelInputLine
+    object 'i_SCRDET40_CONTDOC.WATTRDOC1' : PanelInputLine {
+      Protect = False;
+    } // i_SCRDET40_CONTDOC.WATTRDOC1 : PanelInputLine
+    object 'i_SCRDET40_CONTDOC.DAT1' : PanelInputLine {
+      Protect = True;
+    } // i_SCRDET40_CONTDOC.DAT1 : PanelInputLine
+    object 'i_SCRDET40_CONTDOC.DAT2' : PanelInputLine {
+      Protect = True;
+    } // i_SCRDET40_CONTDOC.DAT2 : PanelInputLine
+    object i_SCRDET40_FDURATION : PanelInputLine {
+      Protect = True;
+    } // i_SCRDET40_FDURATION : PanelInputLine
+    object 'i_SCRDET40_CONTDOC.SBOTTOM' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET40_CONTDOC.SBOTTOM : PanelInputLine
+  } // SCRDET40 : Screen
+  object SCRDET40OLD : Screen {
+    object 'i_SCRDET40OLD_CONTDOC.FILIALNO' : PanelInputLine {
+      Protect = False;
+    } // i_SCRDET40OLD_CONTDOC.FILIALNO : PanelInputLine
+  } // SCRDET40OLD : Screen
+} // Z_STAFFORDERS::RPD_40 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_41' : InterfaceWindow {
+  Palette = 0;
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET41 : Screen {
+    object 'L_SCRDET41_Вид_назначения' : Label {
+      Visible = False;
+    } // L_SCRDET41_Вид_назначения : Label
+    object 'i_SCRDET41_CONTDOC.WATTRDOC2' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_CONTDOC.WATTRDOC2 : PanelInputLine
+    object 'i_SCRDET41_OSNKLOTPUSK.NOTPUS' : PanelInputLine {
+      Protect = False;
+      FontBackColor = '17';
+    } // i_SCRDET41_OSNKLOTPUSK.NOTPUS : PanelInputLine
+    object i_SCRDET41_FBORNDATETITLE : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_FBORNDATETITLE : PanelInputLine
+    object 'i_SCRDET41_PSNLINKS.RBORNDATE' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_PSNLINKS.RBORNDATE : PanelInputLine
+    object 'i_SCRDET41_PSNLINKS.RFIO' : PanelInputLine {
+      Visible = False;
+      StatusCtx = 16988;
+      DefaultPickButton = True;
+    } // i_SCRDET41_PSNLINKS.RFIO : PanelInputLine
+    object i_SCRDET41_FBLISNET : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_FBLISNET : PanelInputLine
+    object 'i_SCRDET41_BLISNET.NONLIST' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_BLISNET.NONLIST : PanelInputLine
+    object i_SCRDET41_FBLISNETDETAILS : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_FBLISNETDETAILS : PanelInputLine
+    object 'i_SCRDET41_CONTDOC.DAT1' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET41_CONTDOC.DAT1 : PanelInputLine
+    object 'i_SCRDET41_CONTDOC.DAT2' : PanelInputLine {
+      Origin_X = 265;
+      Origin_Y = 142;
+      FontBackColor = '17';
+    } // i_SCRDET41_CONTDOC.DAT2 : PanelInputLine
+    object i_SCRDET41_FDURATION : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET41_FDURATION : PanelInputLine
+    object i_SCRDET41_FDAYCOUNT : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_FDAYCOUNT : PanelInputLine
+    object i_SCRDET41_SWORKPERIOD : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_SWORKPERIOD : PanelInputLine
+    object i_SCRDET41_FWORKPERIOD : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_FWORKPERIOD : PanelInputLine
+    object 'L_SCRDET41_Учебный_год_с' : Label {
+      Visible = False;
+    } // L_SCRDET41_Учебный_год_с : Label
+    object 'i_SCRDET41_CONTDOC.DPRIK' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_CONTDOC.DPRIK : PanelInputLine
+    object 'L_SCRDET41_по#1' : Label {
+      Visible = False;
+    } // L_SCRDET41_по#1 : Label
+    object 'i_SCRDET41_CONTDOC.DREZERVE' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_CONTDOC.DREZERVE : PanelInputLine
+    object 'L_SCRDET41_Компенс._отпуск' : Label {
+      Visible = False;
+    } // L_SCRDET41_Компенс._отпуск : Label
+    object 'i_SCRDET41_PUTKLOTPUSK.NOTPUS' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET41_PUTKLOTPUSK.NOTPUS : PanelInputLine
+    object 'i_SCRDET41_CONTDOC.SBOTTOM' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET41_CONTDOC.SBOTTOM : PanelInputLine
+  } // SCRDET41 : Screen
+  object BRPUTVAC : Browser {
+    object 'c_BRPUTVAC_FCOMPENSNAME_Наименование_компенсации' : Column {
+      StatusCtx = 16988;
+      DefaultPickButton = True;
+    } // c_BRPUTVAC_FCOMPENSNAME_Наименование_компенсации : Column
+  } // BRPUTVAC : Browser
+} // Z_STAFFORDERS::RPD_41 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_5' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET5 : Screen {
+    object 'i_SCRDET5_CONTDOC2.WATTRDOC2' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET5_CONTDOC2.WATTRDOC2 : PanelInputLine
+    object i_SCRDET5_SCRTABNUM : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET5_SCRTABNUM : PanelInputLine
+    object 'i_SCRDET5_INFPSN1.STR1' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET5_INFPSN1.STR1 : PanelInputLine
+    object 'L_SCRDET5_Вид_назначения' : Label {
+      Visible = False;
+    } // L_SCRDET5_Вид_назначения : Label
+    object 'i_SCRDET5_CONTDOC.WATTRDOC2' : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET5_CONTDOC.WATTRDOC2 : PanelInputLine
+    object 'b_SCRDET5_Свободные_табельные_номера' : Button {
+      Visible = False;
+    } // b_SCRDET5_Свободные_табельные_номера : Button
+    object 'b_SCRDET5_>>' : Button {
+      Skip = True;
+    } // b_SCRDET5_>> : Button
+    object 'T_SCRDET5_с' : StaticText {
+      Title = 'Отстранить с';
+      Origin_X = 314;
+      Origin_Y = 104;
+    } // T_SCRDET5_с : StaticText
+    object 'i_SCRDET5_NEWAPPOINT.APPOINTDATE' : PanelInputLine {
+      Origin_X = 399;
+      Origin_Y = 104;
+      FontBackColor = '17';
+    } // i_SCRDET5_NEWAPPOINT.APPOINTDATE : PanelInputLine
+    object 'T_SCRDET5_по' : StaticText {
+      Origin_X = 533;
+      Origin_Y = 104;
+    } // T_SCRDET5_по : StaticText
+    object 'i_SCRDET5_NEWAPPOINT.DATEEND' : PanelInputLine {
+      Origin_X = 562;
+      Origin_Y = 104;
+      Size_X = 73;
+    } // i_SCRDET5_NEWAPPOINT.DATEEND : PanelInputLine
+    object cb_SCRDET5_FSETDATUV : PanelCheckBox {
+      Visible = False;
+    } // cb_SCRDET5_FSETDATUV : PanelCheckBox
+    object i_SCRDET5_OLDFULLNAMEPODR : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET5_OLDFULLNAMEPODR : PanelInputLine
+    object 'i_SCRDET5_NEWPOSTCAT.NAME' : PanelInputLine {
+      Origin_X = 324;
+      Origin_Y = 123;
+      FontBackColor = '17';
+    } // i_SCRDET5_NEWPOSTCAT.NAME : PanelInputLine
+    object i_SCRDET5_OSOB_USL : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRDET5_OSOB_USL : PanelInputLine
+    object i_SCRDET5_SCDLASTUSER3 : PanelInputLine {
+      Skip = True;
+    } // i_SCRDET5_SCDLASTUSER3 : PanelInputLine
+    object 'b_SCRDET5_>>#1' : Button {
+      Skip = True;
+    } // b_SCRDET5_>>#1 : Button
+    object 'L_SCRDET5_ИФ' : Label {
+      Visible = False;
+    } // L_SCRDET5_ИФ : Label
+    object i_SCRDET5_FULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET5_FULLIF : PanelInputLine
+    object cb_SCRDET5_BVNUTR : PanelCheckBox {
+      object 'ci_SCRDET5_BVNUTR_Внутреннее_перемещение' : ClusterItem {
+        Visible = False;
+      } // ci_SCRDET5_BVNUTR_Внутреннее_перемещение : ClusterItem
+    } // cb_SCRDET5_BVNUTR : PanelCheckBox
+  } // SCRDET5 : Screen
+} // Z_STAFFORDERS::RPD_5 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_50' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET50 : Screen {
+    object b_SCRDET50 : Button {
+      Icon = 'Z_STAFF::BMPCHECKONSkip';
+    } // b_SCRDET50 : Button
+    object i_SCRDET50_SCDLASTUSER04 : PanelInputLine {
+      Skip = True;
+    } // i_SCRDET50_SCDLASTUSER04 : PanelInputLine
+    object 'b_SCRDET50_>>' : Button {
+      Skip = True;
+    } // b_SCRDET50_>> : Button
+    object 'L_SCRDET50_ИФ' : Label {
+      Visible = False;
+    } // L_SCRDET50_ИФ : Label
+    object i_SCRDET50_FULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET50_FULLIF : PanelInputLine
+    object 'b_SCRDET50#1' : Button {
+      Icon = 'Z_STAFF::BMPCHECKON';
+    } // b_SCRDET50#1 : Button
+    object 'i_SCRDET50_KLREJIM.NREJIM' : PanelInputLine {
+      Skip = True;
+    } // i_SCRDET50_KLREJIM.NREJIM : PanelInputLine
+    object 'b_SCRDET50#2' : Button {
+      Icon = 'Z_STAFF::BMPCHECKON';
+    } // b_SCRDET50#2 : Button
+    object i_SCRDET50_OSOB_USL : PanelInputLine {
+      Skip = True;
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRDET50_OSOB_USL : PanelInputLine
+    object 'i_SCRDET50_CONTDOC.FILIALNO' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET50_CONTDOC.FILIALNO : PanelInputLine
+    object 'i_SCRDET50_CONTDOC.LASTDATE' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET50_CONTDOC.LASTDATE : PanelInputLine
+  } // SCRDET50 : Screen
+} // Z_STAFFORDERS::RPD_50 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_6' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object TRPSN : TreeBrowser {
+    object 'c_TRPSN_PERSONS.FIO_ФИО' : TreeColumn {
+      StatusCtx = 17011;
+      DefaultPickButton = True;
+    } // c_TRPSN_PERSONS.FIO_ФИО : TreeColumn
+    object 'c_TRPSN_FULLNAMEPODR_Структурное_подразделение' : TreeColumn {
+      StatusCtx = 17011;
+      DefaultPickButton = True;
+    } // c_TRPSN_FULLNAMEPODR_Структурное_подразделение : TreeColumn
+    object 'c_TRPSN_PERSORDERSTATE_Исполнение' : TreeColumn {
+      Visible = False;
+    } // c_TRPSN_PERSORDERSTATE_Исполнение : TreeColumn
+  } // TRPSN : TreeBrowser
+  object SCRDET6 : Screen {
+    object i_SCRDET6_FPLANOTPUSK : PanelInputLine {
+      Protect = False;
+      StatusCtx = 16988;
+      DefaultPickButton = True;
+    } // i_SCRDET6_FPLANOTPUSK : PanelInputLine
+    object i_SCRDET6_FWORKPERIOD : PanelInputLine {
+      StatusCtx = 16988;
+      DefaultPickButton = True;
+    } // i_SCRDET6_FWORKPERIOD : PanelInputLine
+    object 'L_SCRDET6_Мат._помощь' : Label {
+      Visible = False;
+    } // L_SCRDET6_Мат._помощь : Label
+    object i_SCRDET6_DWELFARE1 : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET6_DWELFARE1 : PanelInputLine
+    object 'L_SCRDET6_Основание' : Label {
+      Origin_Y = 280;
+    } // L_SCRDET6_Основание : Label
+    object 'i_SCRDET6_CONTDOC.SBOTTOM' : PanelInputLine {
+      Origin_Y = 280;
+      FontBackColor = '17';
+    } // i_SCRDET6_CONTDOC.SBOTTOM : PanelInputLine
+    // Информация: объект "'ExtClass: CONTDOC,7'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: CONTDOC,7' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: CONTDOC,7,0,22,1,ФИО исполняющего обязанности';
+      DefaultValue = '';
+      Origin_X = 233;
+      Origin_Y = 220;
+      Size_X = 367;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: CONTDOC,7 : PanelInputLine
+    // Информация: объект "'LbExtClass: CONTDOC,7'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: CONTDOC,7' : Label {
+      Original = False;
+      Title = 'ФИО исполняющего обязанности';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 14;
+      Origin_Y = 220;
+      Size_X = 200;
+      Size_Y = 14;
+    } // LbExtClass: CONTDOC,7 : Label
+    // Информация: объект "'ExtClass: CONTDOC,8'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: CONTDOC,8' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: CONTDOC,8,0,23,1,Должность исполняющего обязанности';
+      DefaultValue = '';
+      Origin_X = 233;
+      Origin_Y = 240;
+      Size_X = 367;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: CONTDOC,8 : PanelInputLine
+    // Информация: объект "'LbExtClass: CONTDOC,8'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: CONTDOC,8' : Label {
+      Original = False;
+      Title = 'Должность исполняющего обязанности';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 14;
+      Origin_Y = 240;
+      Size_X = 203;
+      Size_Y = 14;
+    } // LbExtClass: CONTDOC,8 : Label
+  } // SCRDET6 : Screen
+  object SCRDET6OLD : Screen {
+    object 'i_SCRDET6OLD_CONTDOC.DAT1' : PanelInputLine {
+      Protect = False;
+    } // i_SCRDET6OLD_CONTDOC.DAT1 : PanelInputLine
+    object 'i_SCRDET6OLD_CONTDOC.DAT2' : PanelInputLine {
+      Protect = False;
+    } // i_SCRDET6OLD_CONTDOC.DAT2 : PanelInputLine
+    object 'i_SCRDET6OLD_CONTDOC.SBOTTOM' : PanelInputLine {
+      Protect = False;
+    } // i_SCRDET6OLD_CONTDOC.SBOTTOM : PanelInputLine
+  } // SCRDET6OLD : Screen
+} // Z_STAFFORDERS::RPD_6 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_65' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_VTABN_Табельный_N' : Column {
+      Skip = False;
+    } // c_BRPSN_VTABN_Табельный_N : Column
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRDET65 : Screen {
+    object 'i_SCRDET65_APPHIST.WFLD' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET65_APPHIST.WFLD : PanelInputLine
+    object 'i_SCRDET65_DOGCAT.NAME' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET65_DOGCAT.NAME : PanelInputLine
+    object 'i_SCRDET65_CATARCH.VALSTRING' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET65_CATARCH.VALSTRING : PanelInputLine
+    object 'i_SCRDET65_CATARCH.DATEFROM' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET65_CATARCH.DATEFROM : PanelInputLine
+    object 'T_SCRDET65_Заключить/продлить_с' : StaticText {
+      Origin_Y = 62;
+      Size_X = 116;
+    } // T_SCRDET65_Заключить/продлить_с : StaticText
+    object 'i_SCRDET65_APPHIST.DREC' : PanelInputLine {
+      Origin_Y = 63;
+      FontBackColor = '17';
+    } // i_SCRDET65_APPHIST.DREC : PanelInputLine
+    object 'i_SCRDET65_APPHIST.DEND' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDET65_APPHIST.DEND : PanelInputLine
+    object i_SCRDET65_SCDLASTUSER4 : PanelInputLine {
+      Skip = True;
+    } // i_SCRDET65_SCDLASTUSER4 : PanelInputLine
+    object 'b_SCRDET65_>>' : Button {
+      Skip = True;
+    } // b_SCRDET65_>> : Button
+    object 'L_SCRDET65_ИФ' : Label {
+      Visible = False;
+    } // L_SCRDET65_ИФ : Label
+    object i_SCRDET65_FULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRDET65_FULLIF : PanelInputLine
+    // Информация: объект "'Field: CONTDOC.LASTDATE'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'Field: CONTDOC.LASTDATE' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 0;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'Field: CONTDOC.LASTDATE';
+      DefaultValue = '';
+      Origin_X = 296;
+      Origin_Y = 83;
+      Size_X = 73;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 256;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 10;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // Field: CONTDOC.LASTDATE : PanelInputLine
+    // Информация: объект "'LbField: CONTDOC.LASTDATE'" типа Label не найден в базовой конфигурации!
+    object 'LbField: CONTDOC.LASTDATE' : Label {
+      Original = False;
+      Title = 'Дата';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 252;
+      Origin_Y = 82;
+      Size_X = 26;
+      Size_Y = 14;
+    } // LbField: CONTDOC.LASTDATE : Label
+    // Информация: объект "'Field: CONTDOC.FILIALNO'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'Field: CONTDOC.FILIALNO' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 0;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'Field: CONTDOC.FILIALNO';
+      DefaultValue = '';
+      Origin_X = 149;
+      Origin_Y = 83;
+      Size_X = 73;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 0;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 11;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = '17';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // Field: CONTDOC.FILIALNO : PanelInputLine
+    // Информация: объект "'LbField: CONTDOC.FILIALNO'" типа Label не найден в базовой конфигурации!
+    object 'LbField: CONTDOC.FILIALNO' : Label {
+      Original = False;
+      Title = 'Номер доп. соглашения';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 7;
+      Origin_Y = 82;
+      Size_X = 120;
+      Size_Y = 14;
+    } // LbField: CONTDOC.FILIALNO : Label
+  } // SCRDET65 : Screen
+} // Z_STAFFORDERS::RPD_65 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_8' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_CONTDOC.WATTRDOC2_Вид_назначения' : Column {
+      Skip = True;
+    } // c_BRPSN_CONTDOC.WATTRDOC2_Вид_назначения : Column
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+    object c_BRPSN : Column {
+      NoAutoSize = True;
+    } // c_BRPSN : Column
+  } // BRPSN : Browser
+  object SCRDOC : Screen {
+    object 'L_SCRDOC_Вид_назначения' : Label {
+      Visible = False;
+    } // L_SCRDOC_Вид_назначения : Label
+    object 'i_SCRDOC_CONTDOC.WATTRDOC2' : PanelInputLine {
+      Visible = False;
+      Skip = True;
+    } // i_SCRDOC_CONTDOC.WATTRDOC2 : PanelInputLine
+    object 'L_SCRDOC_Фамилия_И.О.' : Label {
+      Origin_X = 7;
+    } // L_SCRDOC_Фамилия_И.О. : Label
+    object 'i_SCRDOC_PERSONS.FIO' : PanelInputLine {
+      Origin_Y = 22;
+    } // i_SCRDOC_PERSONS.FIO : PanelInputLine
+    object i_SCRDOC_PERSCLNUMBER : PanelInputLine {
+      Origin_Y = 22;
+    } // i_SCRDOC_PERSCLNUMBER : PanelInputLine
+    object 'i_SCRDOC_APPWORKCONDCAT.NAME' : PanelInputLine {
+      Skip = False;
+    } // i_SCRDOC_APPWORKCONDCAT.NAME : PanelInputLine
+    object i_SCRDOC_PERSMOTIVECATCODE : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_PERSMOTIVECATCODE : PanelInputLine
+    object i_SCRDOC_PERSMOTIVECATNAME : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_PERSMOTIVECATNAME : PanelInputLine
+    object i_SCRDOC_VDISDATE : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_VDISDATE : PanelInputLine
+    object 'T_SCRDOC_Основание' : StaticText {
+      Title = 'Основание приказа';
+    } // T_SCRDOC_Основание : StaticText
+    object i_SCRDOC_PERSDISREASONCATNAME : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRDOC_PERSDISREASONCATNAME : PanelInputLine
+  } // SCRDOC : Screen
+  object BRCOMPENSLIST : Browser {
+    object 'c_BRCOMPENSLIST_PUTVACCON.RESDOUBLE[1]_Количество_дней_для_компенсации' : Column {
+      Protect = True;
+    } // c_BRCOMPENSLIST_PUTVACCON.RESDOUBLE[1]_Количество_дней_для_компенсации : Column
+    object 'c_BRCOMPENSLIST_FCOMPENSNAME_Наименование_компенсации' : Column {
+      Skip = True;
+    } // c_BRCOMPENSLIST_FCOMPENSNAME_Наименование_компенсации : Column
+  } // BRCOMPENSLIST : Browser
+} // Z_STAFFORDERS::RPD_8 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::RPD_9' : InterfaceWindow {
+  EmbName = 'Z_STAFFORDERS::ORDERSLIST->Z_STAFFORDERS::CONTAINEROFORDERS->';
+  object BRPSN : Browser {
+    object 'c_BRPSN_PERSORDERSTATE_Исполнение' : Column {
+      Visible = False;
+    } // c_BRPSN_PERSORDERSTATE_Исполнение : Column
+  } // BRPSN : Browser
+  object SCRRAISE9 : Screen {
+    object 'i_SCRRAISE9_CONTDOC.FILIALNO' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRRAISE9_CONTDOC.FILIALNO : PanelInputLine
+    object 'i_SCRRAISE9_CONTDOC.LASTDATE' : PanelInputLine {
+      FontBackColor = '17';
+    } // i_SCRRAISE9_CONTDOC.LASTDATE : PanelInputLine
+  } // SCRRAISE9 : Screen
+} // Z_STAFFORDERS::RPD_9 : InterfaceWindow
+//-----------------------------------------------------------------------------

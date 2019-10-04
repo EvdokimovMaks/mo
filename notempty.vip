@@ -1,0 +1,28 @@
+#component "Z_STAFFORDERS"
+interface ORDERSLIST;
+
+window WHATISINORDER screen EDITTITLE
+
+handleevent
+cmDone:
+{
+  if TITLEDOC.DOCTEXT = ''
+{
+  message('γαβ®! α¬„®­¥!');
+  inherited::handleevent(cmDone);
+}
+  else inherited::handleevent(cmDone);
+
+}
+cmDefault:
+{
+if TITLEDOC.DOCTEXT = ''
+{
+  message('γαβ® α¬„¥δ®«β!');
+  inherited::handleevent(cmDefault);
+}
+  else inherited::handleevent(cmDefault);
+}
+end;
+end;
+end.

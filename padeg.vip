@@ -1,0 +1,127 @@
+interface iPadeg;
+  var
+    fOleDescr: longint;
+    iOdecl   : declension;
+
+  function GetFullAppointmentPadeg(appointment: string; department: string; nPadeg: integer): string; {
+    result := appointment + ' ' + department;
+    if (OleDescr <> 0) {
+      var rslt: string;
+      _try {
+        OleCall4(fOleDescr, ocFunc, 'GetFullAppointmentPadeg', appointment, department, nPadeg, rslt);
+      }
+      _except
+        on ExOleBadCall: exit;
+      _finally {
+        result := rslt;
+      }
+    }
+  }
+
+  function GetFIOPadeg(LastName, FirstName, MiddleName, Sex: string; nPadeg: integer): string; {
+    result := LastName + ' ' + FirstName + ' ' + MiddleName;
+    if (OleDescr <> 0) {
+      var rslt: string;
+      _try {
+        OleCall6(fOleDescr, ocFunc, 'GetFIOPadeg', LastName, FirstName, MiddleName, Sex, nPadeg, rslt);
+      }
+      _except
+        on ExOleBadCall: exit;
+      _finally {
+        result := rslt;
+      }
+    }
+  }
+
+  function GetIFPadeg(FirstName, LastName, Sex: string; nPadeg: integer): string; {
+    result := FirstName + ' ' + LastName;
+    if (OleDescr <> 0) {
+      var rslt: string;
+      _try {
+        OleCall5(fOleDescr, ocFunc, 'GetFIOPadeg', FirstName, LastName, Sex, nPadeg, rslt);
+      }
+      _except
+        on ExOleBadCall: exit;
+      _finally {
+        result := rslt;
+      }
+    }
+  }
+
+  function GetAppointmentPadeg(appointment: string; nPadeg: integer): string; {
+    result := appointment;
+    if (OleDescr <> 0) {
+      var rslt: string;
+      _try {
+        OleCall3(fOleDescr, ocFunc, 'GetAppointmentPadeg', appointment, nPadeg, rslt);
+      }
+      _except
+        on ExOleBadCall: exit;
+      _finally {
+        result := rslt;
+      }
+    }
+  }
+
+  function GetDepartmentPadeg(Department: string; nPadeg: integer): string; {
+    result := department;
+    //var prefix: string;
+    var k: integer;
+    //prefix := '';
+    if department[1] = '"' {
+      k := pos('"',substr(department,2,255));
+      if k > 0 {
+        //prefix := substr(department,1,k);
+        department := trim(substr(department, k+2,255));
+      }
+    } else if department[1] = '(' {
+      k := pos(')',department);
+      if k > 0 {
+        //prefix := substr(department,1,k);
+        department := trim(substr(department, k+2,255));
+      }
+    }
+    if (OleDescr <> 0) {
+      var rslt: string;
+      _try {
+        OleCall3(fOleDescr, ocFunc, 'GetOfficePadeg', Department, nPadeg, rslt);
+      }
+      _except
+        on ExOleBadCall: exit;
+      _finally {
+        result := rslt;
+      }
+    }
+  }
+
+  procedure RegOle; {
+    _try {
+      fOleDescr := olecreate('Padeg.Declension');
+    }
+    _except
+      on ExOleCantCreateObject: {
+        var rslt: integer;
+        execprogram('regsvr32.exe', '/s '+translatepath('%StartPath%padeg.dll'), '', pfSilent, rslt);
+        if (rslt = 0)
+          fOleDescr := olecreate('Padeg.Declension')
+        else
+          message('Для корректного формирования склонений необходимо наличие в папке EXE Галактики файла "PADEG.DLL"');
+      }
+  }
+
+  constructor init; {
+    RegOle;
+    result := fOleDescr <> 0;
+  }
+
+  destructor done; {
+    if (fOleDescr<>0) OleDestroy(fOleDescr);
+  }
+
+  function GetOleDescr: longint; {
+    if (fOleDescr = 0) RegOle;
+    result := fOleDescr;
+  }
+
+  property OleDescr: longint read GetOleDescr;
+end.

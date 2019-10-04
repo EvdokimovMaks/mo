@@ -1,0 +1,15 @@
+#include replacequotes.vih
+#component "Z_STAFFORDERS"
+
+alter interface RPD_100;
+var
+  _RplQts: KADRY2::replacequotes;
+
+handleevent
+cmInit:
+{
+  inherited::handleevent(cmInit);
+  _RplQts.ReplaceQuotes(replace(translatepath(GetStringParameter('Files', 'OutputFilesDirectory', 0)+'\CommonRep.rtf'),'\\','\'));
+}
+end;
+end.

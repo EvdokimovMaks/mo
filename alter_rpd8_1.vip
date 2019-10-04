@@ -1,0 +1,19 @@
+#component "Z_STAFFORDERS"
+
+alter interface RPD_8;
+
+handleevent
+cmpick:
+{
+  if curfield = #ORGCAT.NAME
+  {
+   var c: comp;
+   if RunInterface(Z_STAFFCAT::PICKCATALOG2, -11, c, 0) = cmDefault then
+    {
+      set contdoc.CADDINF := c;
+    }
+  }
+  else inherited::handleevent(cmpick);
+}
+end;
+end.

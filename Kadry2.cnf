@@ -1,0 +1,1568 @@
+// RECWIN04
+// RECWIN06
+// ORDERLIST
+// GETPRIKAZ
+// PICKCATALOG2
+//-----------------------------------------------------------------------------
+object 'Z_STAFF::RECWIN04' : InterfaceWindow {
+  EmbName = 'Z_STAFF::RECEPTIONMAIN->';
+  object SCRLINKEDPSN : Screen {
+    object 'b_SCRLINKEDPSN_Скопировать_адрес_сотрудника' : Button {
+      Visible = False;
+    } // b_SCRLINKEDPSN_Скопировать_адрес_сотрудника : Button
+    object 'b_SCRLINKEDPSN_Документы' : Button {
+      Visible = False;
+    } // b_SCRLINKEDPSN_Документы : Button
+    object i_SCRLINKEDPSN_STRCOUNTVYCH : PanelInputLine {
+      Origin_Y = 180;
+    } // i_SCRLINKEDPSN_STRCOUNTVYCH : PanelInputLine
+    object 'i_SCRLINKEDPSN_PSNLINKS.KOLLGOTA' : PanelInputLine {
+      Origin_Y = 180;
+    } // i_SCRLINKEDPSN_PSNLINKS.KOLLGOTA : PanelInputLine
+    object i_SCRLINKEDPSN_STRDETAILS : PanelInputLine {
+      Origin_Y = 180;
+    } // i_SCRLINKEDPSN_STRDETAILS : PanelInputLine
+    object 'T_SCRLINKEDPSN_Дата_окончания_действия_вычета:' : StaticText {
+      Origin_Y = 200;
+    } // T_SCRLINKEDPSN_Дата_окончания_действия_вычета: : StaticText
+    object 'i_SCRLINKEDPSN_PSNLINKS.DATOK' : PanelInputLine {
+      Origin_Y = 200;
+    } // i_SCRLINKEDPSN_PSNLINKS.DATOK : PanelInputLine
+    object 'T_SCRLINKEDPSN_Актуальные_обоснования_вычетов:' : StaticText {
+      Origin_Y = 220;
+    } // T_SCRLINKEDPSN_Актуальные_обоснования_вычетов: : StaticText
+    object i_SCRLINKEDPSN_STR1_IJD : PanelInputLine {
+      Origin_Y = 240;
+    } // i_SCRLINKEDPSN_STR1_IJD : PanelInputLine
+    object i_SCRLINKEDPSN_STR2_IJD : PanelInputLine {
+      Origin_Y = 240;
+    } // i_SCRLINKEDPSN_STR2_IJD : PanelInputLine
+    object i_SCRLINKEDPSN_STR1_STD : PanelInputLine {
+      Origin_Y = 260;
+    } // i_SCRLINKEDPSN_STR1_STD : PanelInputLine
+    object i_SCRLINKEDPSN_STR2_STD : PanelInputLine {
+      Origin_Y = 260;
+    } // i_SCRLINKEDPSN_STR2_STD : PanelInputLine
+    object i_SCRLINKEDPSN_STR1_INV : PanelInputLine {
+      Origin_Y = 280;
+    } // i_SCRLINKEDPSN_STR1_INV : PanelInputLine
+    object i_SCRLINKEDPSN_STR2_INV : PanelInputLine {
+      Origin_Y = 280;
+    } // i_SCRLINKEDPSN_STR2_INV : PanelInputLine
+    object i_SCRLINKEDPSN_STR1_ONE : PanelInputLine {
+      Origin_Y = 300;
+    } // i_SCRLINKEDPSN_STR1_ONE : PanelInputLine
+    object i_SCRLINKEDPSN_STR2_ONE : PanelInputLine {
+      Origin_Y = 300;
+    } // i_SCRLINKEDPSN_STR2_ONE : PanelInputLine
+    object i_SCRLINKEDPSN_STR1_VIH : PanelInputLine {
+      Origin_Y = 320;
+    } // i_SCRLINKEDPSN_STR1_VIH : PanelInputLine
+    object i_SCRLINKEDPSN_STR2_VIH : PanelInputLine {
+      Origin_Y = 320;
+    } // i_SCRLINKEDPSN_STR2_VIH : PanelInputLine
+    object 'L_SCRLINKEDPSN_Вычеты_по_месяцам' : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_Вычеты_по_месяцам : Label
+    object L_SCRLINKEDPSN_1 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_1 : Label
+    object L_SCRLINKEDPSN_2 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_2 : Label
+    object L_SCRLINKEDPSN_3 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_3 : Label
+    object L_SCRLINKEDPSN_4 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_4 : Label
+    object L_SCRLINKEDPSN_5 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_5 : Label
+    object L_SCRLINKEDPSN_6 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_6 : Label
+    object L_SCRLINKEDPSN_7 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_7 : Label
+    object L_SCRLINKEDPSN_8 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_8 : Label
+    object L_SCRLINKEDPSN_9 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_9 : Label
+    object L_SCRLINKEDPSN_10_11_12 : Label {
+      Origin_Y = 340;
+    } // L_SCRLINKEDPSN_10_11_12 : Label
+    object 'L_SCRLINKEDPSN_за' : Label {
+      Origin_Y = 360;
+    } // L_SCRLINKEDPSN_за : Label
+    object i_SCRLINKEDPSN_CURYEAR : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CURYEAR : PanelInputLine
+    object 'L_SCRLINKEDPSN_год' : Label {
+      Origin_Y = 360;
+    } // L_SCRLINKEDPSN_год : Label
+    object i_SCRLINKEDPSN_CODE_1 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_1 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_2 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_2 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_3 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_3 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_4 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_4 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_5 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_5 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_6 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_6 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_7 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_7 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_8 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_8 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_9 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_9 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_10 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_10 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_11 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_11 : PanelInputLine
+    object i_SCRLINKEDPSN_CODE_12 : PanelInputLine {
+      Origin_Y = 360;
+    } // i_SCRLINKEDPSN_CODE_12 : PanelInputLine
+    // Информация: объект "'ExtClass: PSNLINKS,281474976710674'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: PSNLINKS,281474976710674' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: PSNLINKS,281474976710674,0,34,1,Место работы';
+      DefaultValue = '';
+      Origin_X = 156;
+      Origin_Y = 125;
+      Size_X = 458;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: PSNLINKS,281474976710674 : PanelInputLine
+    // Информация: объект "'LbExtClass: PSNLINKS,281474976710674'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: PSNLINKS,281474976710674' : Label {
+      Original = False;
+      Title = 'Место работы';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 7;
+      Origin_Y = 125;
+      Size_X = 73;
+      Size_Y = 14;
+    } // LbExtClass: PSNLINKS,281474976710674 : Label
+    // Информация: объект "'ExtClass: PSNLINKS,281474976710673'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: PSNLINKS,281474976710673' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: PSNLINKS,281474976710673,0,33,1,Должность';
+      DefaultValue = '';
+      Origin_X = 156;
+      Origin_Y = 145;
+      Size_X = 458;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: PSNLINKS,281474976710673 : PanelInputLine
+    // Информация: объект "'LbExtClass: PSNLINKS,281474976710673'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: PSNLINKS,281474976710673' : Label {
+      Original = False;
+      Title = 'Должность';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 7;
+      Origin_Y = 145;
+      Size_X = 58;
+      Size_Y = 14;
+    } // LbExtClass: PSNLINKS,281474976710673 : Label
+  } // SCRLINKEDPSN : Screen
+} // Z_STAFF::RECWIN04 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFF::RECWIN06' : InterfaceWindow {
+  EmbName = 'Z_STAFF::RECEPTIONMAIN->';
+  object BRWAPPOINTMENTS1 : Browser {
+    object 'c_BRWAPPOINTMENTS1_BRDLASTUSER_Корректирующий_коэф-т' : Column {
+      Skip = True;
+    } // c_BRWAPPOINTMENTS1_BRDLASTUSER_Корректирующий_коэф-т : Column
+  } // BRWAPPOINTMENTS1 : Browser
+  object BRWAPPOINTMENTS3 : Browser {
+    object 'c_BRWAPPOINTMENTS3_BRDLASTUSER1_Корректирующий_коэф-т' : Column {
+      Skip = True;
+    } // c_BRWAPPOINTMENTS3_BRDLASTUSER1_Корректирующий_коэф-т : Column
+  } // BRWAPPOINTMENTS3 : Browser
+  object BRWAPPOINTMENTS2 : Browser {
+    object 'c_BRWAPPOINTMENTS2_BRDLASTUSER2_Корректирующий_коэф-т' : Column {
+      Skip = True;
+    } // c_BRWAPPOINTMENTS2_BRDLASTUSER2_Корректирующий_коэф-т : Column
+  } // BRWAPPOINTMENTS2 : Browser
+  object SCRAPPOINTMENTS1 : Screen {
+    object 'i_SCRAPPOINTMENTS1_APPEMPCATEGORYCAT.NAIKAT' : PanelInputLine {
+      StatusCtx = 9138;
+      ButtonType = 0;
+    } // i_SCRAPPOINTMENTS1_APPEMPCATEGORYCAT.NAIKAT : PanelInputLine
+    object i_SCRAPPOINTMENTS1_APPOU : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRAPPOINTMENTS1_APPOU : PanelInputLine
+    object 'i_SCRAPPOINTMENTS1_APPOINTMENTS.RATE' : PanelInputLine {
+      Skip = True;
+    } // i_SCRAPPOINTMENTS1_APPOINTMENTS.RATE : PanelInputLine
+    object i_SCRAPPOINTMENTS1_BRDLASTUSER3 : PanelInputLine {
+      Skip = True;
+    } // i_SCRAPPOINTMENTS1_BRDLASTUSER3 : PanelInputLine
+    object 'b_SCRAPPOINTMENTS1_>>' : Button {
+      Skip = True;
+    } // b_SCRAPPOINTMENTS1_>> : Button
+    object i_SCRAPPOINTMENTS1_SPRDIS : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_SPRDIS : PanelInputLine
+    object 'i_SCRAPPOINTMENTS1_INFPSN1.STR3' : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_INFPSN1.STR3 : PanelInputLine
+    object i_SCRAPPOINTMENTS1_SFROMPRDIS : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_SFROMPRDIS : PanelInputLine
+    object 'i_SCRAPPOINTMENTS1_INFPSN1.DEND' : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_INFPSN1.DEND : PanelInputLine
+    object 'i_SCRAPPOINTMENTS1_DISREASONCATALOGS.NAME' : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_DISREASONCATALOGS.NAME : PanelInputLine
+    object 'i_SCRAPPOINTMENTS1_DISMOTIVECATALOGS.NAME' : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_DISMOTIVECATALOGS.NAME : PanelInputLine
+    object 'T_SCRAPPOINTMENTS1_Аттест.период' : StaticText {
+      Origin_Y = 450;
+    } // T_SCRAPPOINTMENTS1_Аттест.период : StaticText
+    object i_SCRAPPOINTMENTS1_FATTPERIOD : PanelInputLine {
+      Origin_Y = 450;
+    } // i_SCRAPPOINTMENTS1_FATTPERIOD : PanelInputLine
+    object 'T_SCRAPPOINTMENTS1_Период_повыш.квал-ции' : StaticText {
+      Origin_Y = 450;
+    } // T_SCRAPPOINTMENTS1_Период_повыш.квал-ции : StaticText
+    object i_SCRAPPOINTMENTS1_FPOSTEDPERIOD : PanelInputLine {
+      Origin_Y = 450;
+    } // i_SCRAPPOINTMENTS1_FPOSTEDPERIOD : PanelInputLine
+    object 'T_SCRAPPOINTMENTS1_ФОТ' : StaticText {
+      Origin_Y = 450;
+    } // T_SCRAPPOINTMENTS1_ФОТ : StaticText
+    object i_SCRAPPOINTMENTS1_TAXRATEAPP : PanelInputLine {
+      Origin_Y = 450;
+    } // i_SCRAPPOINTMENTS1_TAXRATEAPP : PanelInputLine
+    object cb_SCRAPPOINTMENTS1_BVNUTR : PanelCheckBox {
+      object 'ci_SCRAPPOINTMENTS1_BVNUTR_Внутреннее_перемещение' : ClusterItem {
+        Visible = False;
+      } // ci_SCRAPPOINTMENTS1_BVNUTR_Внутреннее_перемещение : ClusterItem
+    } // cb_SCRAPPOINTMENTS1_BVNUTR : PanelCheckBox
+    object 'T_SCRAPPOINTMENTS1_Доп._соглашение:_Номер,дата' : StaticText {
+      Visible = False;
+    } // T_SCRAPPOINTMENTS1_Доп._соглашение:_Номер,дата : StaticText
+    object i_SCRAPPOINTMENTS1_DOPNUM : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_DOPNUM : PanelInputLine
+    object i_SCRAPPOINTMENTS1_DOPDATE : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_DOPDATE : PanelInputLine
+    object 'L_SCRAPPOINTMENTS1_ИФ' : Label {
+      Visible = False;
+    } // L_SCRAPPOINTMENTS1_ИФ : Label
+    object i_SCRAPPOINTMENTS1_FULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS1_FULLIF : PanelInputLine
+    // Информация: объект "'ExtClass: APPOINTMENTS,281474976710660'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtClass: APPOINTMENTS,281474976710660' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 16;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtClass: APPOINTMENTS,281474976710660,0,32,1,Кандидатура согласована';
+      DefaultValue = '';
+      Origin_X = 170;
+      Origin_Y = 400;
+      Size_X = 283;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtClass: APPOINTMENTS,281474976710660 : PanelInputLine
+    // Информация: объект "'LbExtClass: APPOINTMENTS,281474976710660'" типа Label не найден в базовой конфигурации!
+    object 'LbExtClass: APPOINTMENTS,281474976710660' : Label {
+      Original = False;
+      Title = 'Кандидатура согласована';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 14;
+      Origin_Y = 400;
+      Size_X = 135;
+      Size_Y = 14;
+    } // LbExtClass: APPOINTMENTS,281474976710660 : Label
+    // Информация: объект "'ExtAttr: APPOINTMENTS,281474976710665'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtAttr: APPOINTMENTS,281474976710665' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 148;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtAttr: APPOINTMENTS,281474976710665,2,0,0,0,Дата';
+      DefaultValue = '';
+      Origin_X = 170;
+      Origin_Y = 420;
+      Size_X = 73;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 256;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 10;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtAttr: APPOINTMENTS,281474976710665 : PanelInputLine
+    // Информация: объект "'LbExtAttr: APPOINTMENTS,281474976710665'" типа Label не найден в базовой конфигурации!
+    object 'LbExtAttr: APPOINTMENTS,281474976710665' : Label {
+      Original = False;
+      Title = 'Дата';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 123;
+      Origin_Y = 420;
+      Size_X = 26;
+      Size_Y = 14;
+    } // LbExtAttr: APPOINTMENTS,281474976710665 : Label
+    // Информация: объект "'ExtAttr: APPOINTMENTS,281474976710666'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'ExtAttr: APPOINTMENTS,281474976710666' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 145;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'ExtAttr: APPOINTMENTS,281474976710666,0,0,0,0,Номер';
+      DefaultValue = '';
+      Origin_X = 303;
+      Origin_Y = 420;
+      Size_X = 150;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 0;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // ExtAttr: APPOINTMENTS,281474976710666 : PanelInputLine
+    // Информация: объект "'LbExtAttr: APPOINTMENTS,281474976710666'" типа Label не найден в базовой конфигурации!
+    object 'LbExtAttr: APPOINTMENTS,281474976710666' : Label {
+      Original = False;
+      Title = '№';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 280;
+      Origin_Y = 420;
+      Size_X = 13;
+      Size_Y = 14;
+    } // LbExtAttr: APPOINTMENTS,281474976710666 : Label
+    // Информация: объект "'Field: APPOINTMENTS.FOUNDATION'" типа PanelInputLine не найден в базовой конфигурации!
+    object 'Field: APPOINTMENTS.FOUNDATION' : PanelInputLine {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      LessNull = False;
+      StatusCtx = 0;
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      HelpLine = '';
+      FieldName = 'Field: APPOINTMENTS.FOUNDATION';
+      DefaultValue = '';
+      Origin_X = 190;
+      Origin_Y = 470;
+      Size_X = 368;
+      Size_Y = 14;
+      TextAlign = 0;
+      ButtonType = 0;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoStatic = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 200;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+      InputMask = 'Значение не определено или не известно.';
+      EditButton = False;
+    } // Field: APPOINTMENTS.FOUNDATION : PanelInputLine
+    // Информация: объект "'LbField: APPOINTMENTS.FOUNDATION'" типа Label не найден в базовой конфигурации!
+    object 'LbField: APPOINTMENTS.FOUNDATION' : Label {
+      Original = False;
+      Title = 'Основание трудового договора';
+      Visible = True;
+      Hidden = False;
+      HelpLine = '';
+      Origin_X = 14;
+      Origin_Y = 470;
+      Size_X = 163;
+      Size_Y = 14;
+    } // LbField: APPOINTMENTS.FOUNDATION : Label
+  } // SCRAPPOINTMENTS1 : Screen
+  object SCRAPPOINTMENTS3 : Screen {
+    object i_SCRAPPOINTMENTS3_APPOU : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRAPPOINTMENTS3_APPOU : PanelInputLine
+    object 'i_SCRAPPOINTMENTS3_APPOINTMENTS.RATE' : PanelInputLine {
+      Skip = True;
+    } // i_SCRAPPOINTMENTS3_APPOINTMENTS.RATE : PanelInputLine
+    object i_SCRAPPOINTMENTS3_BRDLASTUSER4 : PanelInputLine {
+      Skip = True;
+    } // i_SCRAPPOINTMENTS3_BRDLASTUSER4 : PanelInputLine
+    object 'b_SCRAPPOINTMENTS3_>>' : Button {
+      Skip = True;
+    } // b_SCRAPPOINTMENTS3_>> : Button
+    object 'i_SCRAPPOINTMENTS3_DISREASONCATALOGS3.NAME' : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS3_DISREASONCATALOGS3.NAME : PanelInputLine
+    object 'i_SCRAPPOINTMENTS3_DISMOTIVECATALOGS3.NAME' : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS3_DISMOTIVECATALOGS3.NAME : PanelInputLine
+    object 'L_SCRAPPOINTMENTS3_ИФ' : Label {
+      Visible = False;
+    } // L_SCRAPPOINTMENTS3_ИФ : Label
+    object i_SCRAPPOINTMENTS3_FULLIFS : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS3_FULLIFS : PanelInputLine
+  } // SCRAPPOINTMENTS3 : Screen
+  object SCRAPPOINTMENTS2 : Screen {
+    object i_SCRAPPOINTMENTS2_ZAMOU : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRAPPOINTMENTS2_ZAMOU : PanelInputLine
+    object i_SCRAPPOINTMENTS2_BRDLASTUSER5 : PanelInputLine {
+      Skip = True;
+    } // i_SCRAPPOINTMENTS2_BRDLASTUSER5 : PanelInputLine
+    object 'b_SCRAPPOINTMENTS2_>>' : Button {
+      Skip = True;
+    } // b_SCRAPPOINTMENTS2_>> : Button
+    object 'L_SCRAPPOINTMENTS2_ИФ' : Label {
+      Visible = False;
+    } // L_SCRAPPOINTMENTS2_ИФ : Label
+    object i_SCRAPPOINTMENTS2_FULLIFZ : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS2_FULLIFZ : PanelInputLine
+  } // SCRAPPOINTMENTS2 : Screen
+  object SCRAPPOINTMENTS_TEMPMOVE : Screen {
+    object i_SCRAPPOINTMENTS_TEMPMOVE_VREMOU : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRAPPOINTMENTS_TEMPMOVE_VREMOU : PanelInputLine
+    object i_SCRAPPOINTMENTS_TEMPMOVE_BRDLASTUSER6 : PanelInputLine {
+      Skip = True;
+    } // i_SCRAPPOINTMENTS_TEMPMOVE_BRDLASTUSER6 : PanelInputLine
+    object 'b_SCRAPPOINTMENTS_TEMPMOVE_>>' : Button {
+      Skip = True;
+    } // b_SCRAPPOINTMENTS_TEMPMOVE_>> : Button
+    object 'L_SCRAPPOINTMENTS_TEMPMOVE_ИФ' : Label {
+      Visible = False;
+    } // L_SCRAPPOINTMENTS_TEMPMOVE_ИФ : Label
+    object i_SCRAPPOINTMENTS_TEMPMOVE_FULLIF_TM : PanelInputLine {
+      Visible = False;
+    } // i_SCRAPPOINTMENTS_TEMPMOVE_FULLIF_TM : PanelInputLine
+  } // SCRAPPOINTMENTS_TEMPMOVE : Screen
+  object SCRDISAPPOINT : Screen {
+    object i_SCRDISAPPOINT_DISOU : PanelInputLine {
+      HelpLine = 'Особые условия /  КПС / Подкласс условий труда / Территориальные условия / Основание для выслуги';
+    } // i_SCRDISAPPOINT_DISOU : PanelInputLine
+    object 'b_SCRDISAPPOINT_>>' : Button {
+      Skip = True;
+    } // b_SCRDISAPPOINT_>> : Button
+    object 'L_SCRDISAPPOINT_ИФ' : Label {
+      Visible = False;
+    } // L_SCRDISAPPOINT_ИФ : Label
+    object i_SCRDISAPPOINT_DISFULLIF : PanelInputLine {
+      Visible = False;
+    } // i_SCRDISAPPOINT_DISFULLIF : PanelInputLine
+  } // SCRDISAPPOINT : Screen
+} // Z_STAFF::RECWIN06 : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFORDERS::ORDERSLIST' : InterfaceWindow {
+  Title = 'Реестр приказов: установлен фильтр (c 01/01/2000 по 22/03/2019)';
+  object BRWDOC : Browser {
+    object 'c_BRWDOC_IMAGEONARCHIVE_А' : Column {
+      Visible = False;
+    } // c_BRWDOC_IMAGEONARCHIVE_А : Column
+  } // BRWDOC : Browser
+  object WHATISINORDER : InterfaceWindow {
+    Title = 'Приказ № 00010 (Прием Иванов К.М.)';
+    object EDITTITLE : Screen {
+      object i_EDITTITLE_BARKODANDSTATECAPTION : PanelInputLine {
+        Visible = False;
+      } // i_EDITTITLE_BARKODANDSTATECAPTION : PanelInputLine
+      object 'i_EDITTITLE_TMPTITLEDOC.DOCTEXT' : PanelInputLine {
+        FontBackColor = '17';
+      } // i_EDITTITLE_TMPTITLEDOC.DOCTEXT : PanelInputLine
+      object i_EDITTITLE_BARKODANDSTATE : PanelInputLine {
+        Visible = False;
+      } // i_EDITTITLE_BARKODANDSTATE : PanelInputLine
+    } // EDITTITLE : Screen
+  } // WHATISINORDER : InterfaceWindow
+} // Z_STAFFORDERS::ORDERSLIST : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'F_PODOT::GETPRIKAZ' : InterfaceWindow {
+  Centered = True;
+  object BRPRIKAZ : Browser {
+    object c_BRPRIKAZ : Column {
+      NoAutoSize = True;
+    } // c_BRPRIKAZ : Column
+    object 'c_BRPRIKAZ_IMAGEONARCHIVE_А' : Column {
+      Visible = False;
+    } // c_BRPRIKAZ_IMAGEONARCHIVE_А : Column
+  } // BRPRIKAZ : Browser
+  object TRPRIKAZ : TreeBrowser {
+    object 'c_TRPRIKAZ_IMAGEONARCHIVE_А' : TreeColumn {
+      Visible = False;
+    } // c_TRPRIKAZ_IMAGEONARCHIVE_А : TreeColumn
+  } // TRPRIKAZ : TreeBrowser
+  object BRSPPRIKAZ : Browser {
+    object 'c_BRSPPRIKAZ_SPPRIKAZ.DDOC_Дата_КУ' : Column {
+      Visible = False;
+    } // c_BRSPPRIKAZ_SPPRIKAZ.DDOC_Дата_КУ : Column
+  } // BRSPPRIKAZ : Browser
+  object WIPRIKAZ : InterfaceWindow {
+    Centered = True;
+    object SCREDITPRIKAZ : Screen {
+      RectB_Y = 3.17293214798;
+      object 'L_SCREDITPRIKAZ_Группа' : Label {
+        Origin_X = 14;
+        Origin_Y = 2;
+        Size_X = 42;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Группа : Label
+      object 'L_SCREDITPRIKAZ_Дескр' : Label {
+        Origin_X = 70;
+        Origin_Y = 2;
+        Size_X = 35;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Дескр : Label
+      object 'L_SCREDITPRIKAZ_Номер' : Label {
+        Origin_X = 140;
+        Origin_Y = 2;
+        Size_X = 35;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Номер : Label
+      object 'L_SCREDITPRIKAZ_Сформирован' : Label {
+        Origin_X = 273;
+        Origin_Y = 2;
+        Size_X = 77;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Сформирован : Label
+      object 'L_SCREDITPRIKAZ_Статус' : Label {
+        Origin_X = 399;
+        Origin_Y = 2;
+        Size_X = 42;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Статус : Label
+      object 'L_SCREDITPRIKAZ_Вид_командировки' : Label {
+        Origin_X = 539;
+        Origin_Y = 2;
+        Size_X = 112;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Вид_командировки : Label
+      object 'L_SCREDITPRIKAZ_Вид_приказа' : Label {
+        Hidden = True;
+        Origin_X = 679;
+        Origin_Y = 2;
+        Size_X = 77;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Вид_приказа : Label
+      object 'i_SCREDITPRIKAZ_PRIKAZ.DESGR' : PanelInputLine {
+        Origin_X = 9;
+        Origin_Y = 23;
+        Size_X = 45;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PRIKAZ.DESGR : PanelInputLine
+      object 'i_SCREDITPRIKAZ_PRIKAZ.DESCR' : PanelInputLine {
+        Origin_X = 65;
+        Origin_Y = 23;
+        Size_X = 45;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PRIKAZ.DESCR : PanelInputLine
+      object 'i_SCREDITPRIKAZ_PRIKAZ.NODOC' : PanelInputLine {
+        Origin_X = 128;
+        Origin_Y = 23;
+        Size_X = 122;
+        Size_Y = 14;
+        FontBackColor = '17';
+      } // i_SCREDITPRIKAZ_PRIKAZ.NODOC : PanelInputLine
+      object 'i_SCREDITPRIKAZ_PRIKAZ.DDOC' : PanelInputLine {
+        Origin_X = 261;
+        Origin_Y = 23;
+        Size_X = 115;
+        Size_Y = 14;
+        FontBackColor = '17';
+      } // i_SCREDITPRIKAZ_PRIKAZ.DDOC : PanelInputLine
+      object 'i_SCREDITPRIKAZ_KATNOTES.NAME' : PanelInputLine {
+        Origin_X = 387;
+        Origin_Y = 23;
+        Size_X = 129;
+        Size_Y = 14;
+        FontBackColor = '17';
+      } // i_SCREDITPRIKAZ_KATNOTES.NAME : PanelInputLine
+      object i_SCREDITPRIKAZ_CATEGORYNAME : PanelInputLine {
+        Origin_X = 527;
+        Origin_Y = 23;
+        Size_X = 129;
+        Size_Y = 14;
+        FontBackColor = '17';
+      } // i_SCREDITPRIKAZ_CATEGORYNAME : PanelInputLine
+      object i_SCREDITPRIKAZ_PRIKAZTYPE : PanelInputLine {
+        Hidden = True;
+        Origin_X = 667;
+        Origin_Y = 23;
+        Size_X = 129;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PRIKAZTYPE : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Приказодатель' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 42;
+        Size_X = 91;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Приказодатель : Label
+      object 'i_SCREDITPRIKAZ_PERSONSMAIN.FIO' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 43;
+        Size_X = 248;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PERSONSMAIN.FIO : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Исполнитель' : Label {
+        Hidden = True;
+        Origin_X = 399;
+        Origin_Y = 42;
+        Size_X = 77;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Исполнитель : Label
+      object 'i_SCREDITPRIKAZ_PERSONSISP.FIO' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 527;
+        Origin_Y = 43;
+        Size_X = 269;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PERSONSISP.FIO : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Подразделение' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 62;
+        Size_X = 91;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Подразделение : Label
+      object i_SCREDITPRIKAZ_KATPODRNAME : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 63;
+        Size_X = 248;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_KATPODRNAME : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Структурная_единица' : Label {
+        Hidden = True;
+        Origin_X = 385;
+        Origin_Y = 62;
+        Size_X = 133;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Структурная_единица : Label
+      object i_SCREDITPRIKAZ_STAFFPODRNAME : PanelInputLine {
+        Hidden = True;
+        Origin_X = 527;
+        Origin_Y = 63;
+        Size_X = 269;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_STAFFPODRNAME : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Место_выбытия' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 82;
+        Size_X = 91;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Место_выбытия : Label
+      object 'i_SCREDITPRIKAZ_PRIKAZ.MESTOIS' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 83;
+        Size_X = 668;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PRIKAZ.MESTOIS : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Организация' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 102;
+        Size_X = 77;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Организация : Label
+      object 'i_SCREDITPRIKAZ_KATORGIS.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 103;
+        Size_X = 388;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_KATORGIS.NAME : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Страна' : Label {
+        Hidden = True;
+        Origin_X = 525;
+        Origin_Y = 102;
+        Size_X = 42;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Страна : Label
+      object 'i_SCREDITPRIKAZ_KATSTATEIS.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 576;
+        Origin_Y = 103;
+        Size_X = 80;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_KATSTATEIS.NAME : PanelInputLine
+      object 'L_SCREDITPRIKAZ_Город' : Label {
+        Hidden = True;
+        Origin_X = 665;
+        Origin_Y = 102;
+        Size_X = 35;
+        Size_Y = 14;
+      } // L_SCREDITPRIKAZ_Город : Label
+      object 'i_SCREDITPRIKAZ_KATCITYIS.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 709;
+        Origin_Y = 103;
+        Size_X = 87;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_KATCITYIS.NAME : PanelInputLine
+      object i_SCREDITPRIKAZ_LINKINFO : PanelInputLine {
+        Origin_X = 9;
+        Origin_Y = 123;
+        Size_X = 787;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_LINKINFO : PanelInputLine
+      object i_SCREDITPRIKAZ_PERSONSCHAIRFIO : PanelInputLine {
+        Origin_X = 9;
+        Origin_Y = 143;
+        Size_X = 787;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_PERSONSCHAIRFIO : PanelInputLine
+      object i_SCREDITPRIKAZ_BARKODANDSTATECAPTION : PanelInputLine {
+        Visible = False;
+        Hidden = True;
+        Origin_X = 9;
+        Origin_Y = 163;
+        Size_X = 171;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_BARKODANDSTATECAPTION : PanelInputLine
+      object i_SCREDITPRIKAZ_BARKODANDSTATE : PanelInputLine {
+        Visible = False;
+        Hidden = True;
+        Origin_X = 198;
+        Origin_Y = 163;
+        Size_X = 367;
+        Size_Y = 14;
+      } // i_SCREDITPRIKAZ_BARKODANDSTATE : PanelInputLine
+    } // SCREDITPRIKAZ : Screen
+    object BREDITSPPRIKAZ : Browser {
+      RectA_Y = 4.17293214798;
+      RectB_Y = 9.979323387146;
+      object 'c_BREDITSPPRIKAZ_SPPRIKAZ.DDOC_Дата_КУ' : Column {
+        Visible = False;
+      } // c_BREDITSPPRIKAZ_SPPRIKAZ.DDOC_Дата_КУ : Column
+      object 'c_BREDITSPPRIKAZ_PERSONSRUK.FIO_Руководитель_подразделения' : Column {
+        Hidden = True;
+      } // c_BREDITSPPRIKAZ_PERSONSRUK.FIO_Руководитель_подразделения : Column
+    } // BREDITSPPRIKAZ : Browser
+    object SCREDITONEPRIKAZ : Screen {
+      RectA_Y = 10.979323387146;
+      object 'L_SCREDITONEPRIKAZ_Место_назначения' : Label {
+        Origin_X = 6;
+        Origin_Y = 22;
+        Size_X = 112;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Место_назначения : Label
+      object 'i_SCREDITONEPRIKAZ_PRIKAZ.MESTO' : PanelInputLine {
+        Origin_X = 128;
+        Origin_Y = 23;
+        Size_X = 282;
+        Size_Y = 14;
+        FontBackColor = '17';
+      } // i_SCREDITONEPRIKAZ_PRIKAZ.MESTO : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Организация' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 42;
+        Size_X = 77;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Организация : Label
+      object 'i_SCREDITONEPRIKAZ_KATORG.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 43;
+        Size_X = 388;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_KATORG.NAME : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Страна' : Label {
+        Hidden = True;
+        Origin_X = 525;
+        Origin_Y = 42;
+        Size_X = 42;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Страна : Label
+      object 'i_SCREDITONEPRIKAZ_KATSTATE.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 576;
+        Origin_Y = 43;
+        Size_X = 80;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_KATSTATE.NAME : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Город' : Label {
+        Hidden = True;
+        Origin_X = 665;
+        Origin_Y = 42;
+        Size_X = 35;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Город : Label
+      object 'i_SCREDITONEPRIKAZ_KATCITY.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 709;
+        Origin_Y = 43;
+        Size_X = 87;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_KATCITY.NAME : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_За_счет_средств' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 62;
+        Size_X = 112;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_За_счет_средств : Label
+      object 'i_SCREDITONEPRIKAZ_PRIKAZ.TEMA' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 63;
+        Size_X = 668;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_PRIKAZ.TEMA : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Основание' : Label {
+        Origin_X = 6;
+        Origin_Y = 176;
+        Size_X = 78;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Основание : Label
+      object 'i_SCREDITONEPRIKAZ_PRIKAZ.OSNOV' : PanelInputLine {
+        Origin_X = 222;
+        Origin_Y = 176;
+        Size_X = 560;
+        Size_Y = 14;
+        DefaultPickButton = False;
+        FontBackColor = '17';
+      } // i_SCREDITONEPRIKAZ_PRIKAZ.OSNOV : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Цель' : Label {
+        Hidden = True;
+        Origin_X = 7;
+        Origin_Y = 102;
+        Size_X = 112;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Цель : Label
+      object 'i_SCREDITONEPRIKAZ_PRIKAZ.NAME' : PanelInputLine {
+        Hidden = True;
+        Origin_X = 128;
+        Origin_Y = 103;
+        Size_X = 668;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_PRIKAZ.NAME : PanelInputLine
+      object i_SCREDITONEPRIKAZ_SROKSTR : PanelInputLine {
+        Origin_X = 431;
+        Origin_Y = 50;
+        Size_X = 269;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_SROKSTR : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Дата_начала' : Label {
+        Origin_X = 6;
+        Origin_Y = 50;
+        Size_X = 77;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Дата_начала : Label
+      object 'i_SCREDITONEPRIKAZ_PRIKAZ.DSTART' : PanelInputLine {
+        Origin_X = 128;
+        Origin_Y = 50;
+        Size_X = 80;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_PRIKAZ.DSTART : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Дата_прибытия' : Label {
+        Origin_X = 6;
+        Origin_Y = 74;
+        Size_X = 91;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Дата_прибытия : Label
+      object i_SCREDITONEPRIKAZ_PRIKAZKOMSTART : PanelInputLine {
+        Origin_X = 128;
+        Origin_Y = 74;
+        Size_X = 80;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_PRIKAZKOMSTART : PanelInputLine
+      object i_SCREDITONEPRIKAZ_ONWAYTOSTR : PanelInputLine {
+        Hidden = True;
+        Origin_X = 598;
+        Origin_Y = 80;
+        Size_X = 129;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_ONWAYTOSTR : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Дата_выбытия' : Label {
+        Origin_X = 223;
+        Origin_Y = 74;
+        Size_X = 84;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Дата_выбытия : Label
+      object i_SCREDITONEPRIKAZ_PRIKAZKOMEND : PanelInputLine {
+        Origin_X = 330;
+        Origin_Y = 74;
+        Size_X = 80;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_PRIKAZKOMEND : PanelInputLine
+      object 'L_SCREDITONEPRIKAZ_Дата_окончания' : Label {
+        Origin_X = 223;
+        Origin_Y = 50;
+        Size_X = 98;
+        Size_Y = 14;
+      } // L_SCREDITONEPRIKAZ_Дата_окончания : Label
+      object 'i_SCREDITONEPRIKAZ_PRIKAZ.DEND' : PanelInputLine {
+        Origin_X = 330;
+        Origin_Y = 50;
+        Size_X = 80;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_PRIKAZ.DEND : PanelInputLine
+      object i_SCREDITONEPRIKAZ_ONWAYFROMSTR : PanelInputLine {
+        Hidden = True;
+        Origin_X = 353;
+        Origin_Y = 218;
+        Size_X = 129;
+        Size_Y = 14;
+      } // i_SCREDITONEPRIKAZ_ONWAYFROMSTR : PanelInputLine
+      // Информация: объект "'Field: PRIKAZ.DSTART'" типа PanelInputLine не найден в базовой конфигурации!
+      object 'Field: PRIKAZ.DSTART' : PanelInputLine {
+        Original = False;
+        Visible = True;
+        Hidden = True;
+        Protect = False;
+        Skip = False;
+        UpCase = False;
+        Password = False;
+        NoValidCheck = True;
+        LessNull = False;
+        StatusCtx = 0;
+        Strings = ( // Список строк
+        )
+        StringsNull = 0;
+        HelpLine = '';
+        FieldName = 'Field: PRIKAZ.DSTART';
+        DefaultValue = '';
+        Origin_X = 301;
+        Origin_Y = 202;
+        Size_X = 83;
+        Size_Y = 14;
+        TextAlign = 0;
+        ButtonType = 256;
+        DefaultPickButton = False;
+        SpinInc = 0.0;
+        SpinMin = 0.0;
+        SpinMax = 0.0;
+        NoStatic = False;
+        EnumValues = ( // Список целых
+        )
+        PassiveFormat = '';
+        Points = 0;
+        MaxLen = 10;
+        PrecisionVarName = '';
+        HistoryID = 0;
+        DropTarget = False;
+        DropSource = False;
+        FontBold = 'Значение не определено или не известно.';
+        FontItalic = 'Значение не определено или не известно.';
+        FontColor = 'Значение не определено или не известно.';
+        FontBackColor = 'Значение не определено или не известно.';
+        InputMask = 'Значение не определено или не известно.';
+        EditButton = False;
+      } // Field: PRIKAZ.DSTART : PanelInputLine
+      // Информация: объект "'Field: PRIKAZ.DEND'" типа PanelInputLine не найден в базовой конфигурации!
+      object 'Field: PRIKAZ.DEND' : PanelInputLine {
+        Original = False;
+        Visible = True;
+        Hidden = True;
+        Protect = False;
+        Skip = False;
+        UpCase = False;
+        Password = False;
+        NoValidCheck = True;
+        LessNull = False;
+        StatusCtx = 0;
+        Strings = ( // Список строк
+        )
+        StringsNull = 0;
+        HelpLine = '';
+        FieldName = 'Field: PRIKAZ.DEND';
+        DefaultValue = '';
+        Origin_X = 405;
+        Origin_Y = 200;
+        Size_X = 81;
+        Size_Y = 14;
+        TextAlign = 0;
+        ButtonType = 256;
+        DefaultPickButton = False;
+        SpinInc = 0.0;
+        SpinMin = 0.0;
+        SpinMax = 0.0;
+        NoStatic = False;
+        EnumValues = ( // Список целых
+        )
+        PassiveFormat = '';
+        Points = 0;
+        MaxLen = 10;
+        PrecisionVarName = '';
+        HistoryID = 0;
+        DropTarget = False;
+        DropSource = False;
+        FontBold = 'Значение не определено или не известно.';
+        FontItalic = 'Значение не определено или не известно.';
+        FontColor = 'Значение не определено или не известно.';
+        FontBackColor = 'Значение не определено или не известно.';
+        InputMask = 'Значение не определено или не известно.';
+        EditButton = False;
+      } // Field: PRIKAZ.DEND : PanelInputLine
+      // Информация: объект "'ExtClass: PRIKAZ,281474976710657'" типа PanelInputLine не найден в базовой конфигурации!
+      object 'ExtClass: PRIKAZ,281474976710657' : PanelInputLine {
+        Original = False;
+        Visible = True;
+        Hidden = False;
+        Protect = True;
+        Skip = False;
+        UpCase = False;
+        Password = False;
+        NoValidCheck = True;
+        LessNull = False;
+        StatusCtx = 16;
+        Strings = ( // Список строк
+        )
+        StringsNull = 0;
+        HelpLine = '';
+        FieldName = 'ExtClass: PRIKAZ,281474976710657,0,24,1,ФИО исполняющего обязаности';
+        DefaultValue = '';
+        Origin_X = 222;
+        Origin_Y = 129;
+        Size_X = 560;
+        Size_Y = 14;
+        TextAlign = 0;
+        ButtonType = 16;
+        DefaultPickButton = False;
+        SpinInc = 0.0;
+        SpinMin = 0.0;
+        SpinMax = 0.0;
+        NoStatic = False;
+        EnumValues = ( // Список целых
+        )
+        PassiveFormat = '';
+        Points = 0;
+        MaxLen = 255;
+        PrecisionVarName = '';
+        HistoryID = 0;
+        DropTarget = False;
+        DropSource = False;
+        FontBold = 'Значение не определено или не известно.';
+        FontItalic = 'Значение не определено или не известно.';
+        FontColor = 'Значение не определено или не известно.';
+        FontBackColor = 'Значение не определено или не известно.';
+        InputMask = 'Значение не определено или не известно.';
+        EditButton = False;
+        FontBackColor = '17';
+      } // ExtClass: PRIKAZ,281474976710657 : PanelInputLine
+      // Информация: объект "'ExtClass: PRIKAZ,281474976710663'" типа PanelInputLine не найден в базовой конфигурации!
+      object 'ExtClass: PRIKAZ,281474976710663' : PanelInputLine {
+        Original = False;
+        Visible = True;
+        Hidden = False;
+        Protect = True;
+        Skip = False;
+        UpCase = False;
+        Password = False;
+        NoValidCheck = True;
+        LessNull = False;
+        StatusCtx = 16;
+        Strings = ( // Список строк
+        )
+        StringsNull = 0;
+        HelpLine = '';
+        FieldName = 'ExtClass: PRIKAZ,281474976710663,0,30,1,Должность исполняющего обязаности';
+        DefaultValue = '';
+        Origin_X = 222;
+        Origin_Y = 152;
+        Size_X = 560;
+        Size_Y = 14;
+        TextAlign = 0;
+        ButtonType = 16;
+        DefaultPickButton = False;
+        SpinInc = 0.0;
+        SpinMin = 0.0;
+        SpinMax = 0.0;
+        NoStatic = False;
+        EnumValues = ( // Список целых
+        )
+        PassiveFormat = '';
+        Points = 0;
+        MaxLen = 255;
+        PrecisionVarName = '';
+        HistoryID = 0;
+        DropTarget = False;
+        DropSource = False;
+        FontBold = 'Значение не определено или не известно.';
+        FontItalic = 'Значение не определено или не известно.';
+        FontColor = 'Значение не определено или не известно.';
+        FontBackColor = 'Значение не определено или не известно.';
+        InputMask = 'Значение не определено или не известно.';
+        EditButton = False;
+        FontBackColor = '17';
+      } // ExtClass: PRIKAZ,281474976710663 : PanelInputLine
+      // Информация: объект "'ExtClass: PRIKAZ,281474976710664'" типа PanelInputLine не найден в базовой конфигурации!
+      object 'ExtClass: PRIKAZ,281474976710664' : PanelInputLine {
+        Original = False;
+        Visible = True;
+        Hidden = False;
+        Protect = True;
+        Skip = False;
+        UpCase = False;
+        Password = False;
+        NoValidCheck = True;
+        LessNull = False;
+        StatusCtx = 16;
+        Strings = ( // Список строк
+        )
+        StringsNull = 0;
+        HelpLine = '';
+        FieldName = 'ExtClass: PRIKAZ,281474976710664,0,31,1,Наличие разрешения';
+        DefaultValue = '';
+        Origin_X = 222;
+        Origin_Y = 200;
+        Size_X = 560;
+        Size_Y = 14;
+        TextAlign = 0;
+        ButtonType = 16;
+        DefaultPickButton = False;
+        SpinInc = 0.0;
+        SpinMin = 0.0;
+        SpinMax = 0.0;
+        NoStatic = False;
+        EnumValues = ( // Список целых
+        )
+        PassiveFormat = '';
+        Points = 0;
+        MaxLen = 255;
+        PrecisionVarName = '';
+        HistoryID = 0;
+        DropTarget = False;
+        DropSource = False;
+        FontBold = 'Значение не определено или не известно.';
+        FontItalic = 'Значение не определено или не известно.';
+        FontColor = 'Значение не определено или не известно.';
+        FontBackColor = 'Значение не определено или не известно.';
+        InputMask = 'Значение не определено или не известно.';
+        EditButton = False;
+        FontBackColor = '17';
+      } // ExtClass: PRIKAZ,281474976710664 : PanelInputLine
+      // Информация: объект "'LbExtClass: PRIKAZ,281474976710657'" типа Label не найден в базовой конфигурации!
+      object 'LbExtClass: PRIKAZ,281474976710657' : Label {
+        Original = False;
+        Title = 'ФИО исполняющего обязанности';
+        Visible = True;
+        Hidden = False;
+        HelpLine = '';
+        Origin_X = 6;
+        Origin_Y = 129;
+        Size_X = 175;
+        Size_Y = 14;
+      } // LbExtClass: PRIKAZ,281474976710657 : Label
+      // Информация: объект "'LbExtClass: PRIKAZ,281474976710663'" типа Label не найден в базовой конфигурации!
+      object 'LbExtClass: PRIKAZ,281474976710663' : Label {
+        Original = False;
+        Title = 'Должность исполяющего обязанности';
+        Visible = True;
+        Hidden = False;
+        HelpLine = '';
+        Origin_X = 6;
+        Origin_Y = 152;
+        Size_X = 200;
+        Size_Y = 14;
+      } // LbExtClass: PRIKAZ,281474976710663 : Label
+      // Информация: объект "'LbExtClass: PRIKAZ,281474976710664'" типа Label не найден в базовой конфигурации!
+      object 'LbExtClass: PRIKAZ,281474976710664' : Label {
+        Original = False;
+        Title = 'Наличие разрешения';
+        Visible = True;
+        Hidden = False;
+        HelpLine = '';
+        Origin_X = 6;
+        Origin_Y = 200;
+        Size_X = 119;
+        Size_Y = 14;
+      } // LbExtClass: PRIKAZ,281474976710664 : Label
+    } // SCREDITONEPRIKAZ : Screen
+    object SCREDITCANCELPRIKAZ : Screen {
+      RectA_Y = 10.979323387146;
+    } // SCREDITCANCELPRIKAZ : Screen
+    object SCREDITONEPEREXOD : Screen {
+      object 'L_SCREDITONEPEREXOD_Переход' : Label {
+        Origin_X = 7;
+        Origin_Y = 2;
+        Size_X = 112;
+        Size_Y = 14;
+      } // L_SCREDITONEPEREXOD_Переход : Label
+      object i_SCREDITONEPEREXOD_PEREXODSP : PanelInputLine {
+        Origin_X = 128;
+        Origin_Y = 4;
+        Size_X = 668;
+        Size_Y = 14;
+      } // i_SCREDITONEPEREXOD_PEREXODSP : PanelInputLine
+    } // SCREDITONEPEREXOD : Screen
+    object SCREDITMULTIPRIKAZ : Screen {
+      RectA_Y = 10.979323387146;
+    } // SCREDITMULTIPRIKAZ : Screen
+    object BREDITMULTIPRIKAZ : Browser {
+      RectA_Y = 10.979323387146;
+    } // BREDITMULTIPRIKAZ : Browser
+    object MEMOPRIKAZ : MemoViewer {
+      StatusCtx = 366;
+    } // MEMOPRIKAZ : MemoViewer
+  } // WIPRIKAZ : InterfaceWindow
+} // F_PODOT::GETPRIKAZ : InterfaceWindow
+//-----------------------------------------------------------------------------
+object 'Z_STAFFCAT::PICKCATALOG2' : InterfaceWindow {
+  Title = 'Справочник: Структурные единицы штатного расписания: установлен фильтр';
+  Centered = True;
+  object TRCAT : TreeBrowser {
+    object c_TRCAT_MARKERSTR_V : TreeColumn {
+      Visible = False;
+    } // c_TRCAT_MARKERSTR_V : TreeColumn
+    // Информация: объект "'Field: CATALOGS.SDOPINF'" типа TreeColumn не найден в базовой конфигурации!
+    object 'Field: CATALOGS.SDOPINF' : TreeColumn {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = False;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      StatusCtx = 0;
+      Title = 'Тип подведомственного учреждения';
+      HelpLine = '';
+      FieldName = 'Field: CATALOGS.SDOPINF';
+      DefaultValue = '';
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      Size_X = 328;
+      Index = 2;
+      DefaultWidth = 26;
+      TextAlign = 0;
+      ButtonType = 0;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoAutoSize = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 100;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FixedState = 0;
+      EditButton = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+    } // Field: CATALOGS.SDOPINF : TreeColumn
+    // Информация: объект "'ExtClass: CATALOGS,281474976710675'" типа TreeColumn не найден в базовой конфигурации!
+    object 'ExtClass: CATALOGS,281474976710675' : TreeColumn {
+      Original = False;
+      Visible = True;
+      Hidden = False;
+      Protect = True;
+      Skip = False;
+      UpCase = False;
+      Password = False;
+      NoValidCheck = True;
+      StatusCtx = 16;
+      Title = 'Направление подведомственного учреждения';
+      HelpLine = '';
+      FieldName = 'ExtClass: CATALOGS,281474976710675,0,35,1,Направление подведомственного учреждения';
+      DefaultValue = '';
+      Strings = ( // Список строк
+      )
+      StringsNull = 0;
+      Size_X = 316;
+      Index = 3;
+      DefaultWidth = 26;
+      TextAlign = 0;
+      ButtonType = 16;
+      DefaultPickButton = False;
+      SpinInc = 0.0;
+      SpinMin = 0.0;
+      SpinMax = 0.0;
+      NoAutoSize = False;
+      EnumValues = ( // Список целых
+      )
+      PassiveFormat = '';
+      Points = 0;
+      MaxLen = 255;
+      PrecisionVarName = '';
+      HistoryID = 0;
+      DropTarget = False;
+      DropSource = False;
+      FixedState = 0;
+      EditButton = False;
+      FontBold = 'Значение не определено или не известно.';
+      FontItalic = 'Значение не определено или не известно.';
+      FontColor = 'Значение не определено или не известно.';
+      FontBackColor = 'Значение не определено или не известно.';
+    } // ExtClass: CATALOGS,281474976710675 : TreeColumn
+    object 'c_TRCAT_CATALOGS.CODE_Код' : TreeColumn {
+      Index = 4;
+    } // c_TRCAT_CATALOGS.CODE_Код : TreeColumn
+    object 'c_TRCAT_CATALOGS.DATN_Дата_создания' : TreeColumn {
+      Skip = True;
+      Index = 5;
+    } // c_TRCAT_CATALOGS.DATN_Дата_создания : TreeColumn
+    object 'c_TRCAT_CATALOGS.DATOK_Дата_ликвид.' : TreeColumn {
+      Skip = True;
+      Index = 6;
+    } // c_TRCAT_CATALOGS.DATOK_Дата_ликвид. : TreeColumn
+    object c_TRCAT_SYSRECORD_C : TreeColumn {
+      Index = 7;
+    } // c_TRCAT_SYSRECORD_C : TreeColumn
+    object 'c_TRCAT_CATALOGS.SYSCODE_Сист._код' : TreeColumn {
+      Visible = False;
+      Index = 8;
+    } // c_TRCAT_CATALOGS.SYSCODE_Сист._код : TreeColumn
+  } // TRCAT : TreeBrowser
+  object BRCAT : Browser {
+    object c_BRCAT_MARKERSTR_V : Column {
+      Visible = False;
+    } // c_BRCAT_MARKERSTR_V : Column
+    object 'c_BRCAT_CATALOGS.DATN_Дата_создания' : Column {
+      Skip = True;
+    } // c_BRCAT_CATALOGS.DATN_Дата_создания : Column
+    object 'c_BRCAT_CATALOGS.DATOK_Дата_ликвид.' : Column {
+      Skip = True;
+    } // c_BRCAT_CATALOGS.DATOK_Дата_ликвид. : Column
+    object 'c_BRCAT_CATALOGS.SYSCODE_Сист._код' : Column {
+      Visible = False;
+    } // c_BRCAT_CATALOGS.SYSCODE_Сист._код : Column
+  } // BRCAT : Browser
+  object BRSUBCAT : Browser {
+    object c_BRSUBCAT_MARKERSTR_V : Column {
+      Visible = False;
+    } // c_BRSUBCAT_MARKERSTR_V : Column
+    object 'c_BRSUBCAT_CATALOGS.SYSCODE_Сист._код' : Column {
+      Visible = False;
+    } // c_BRSUBCAT_CATALOGS.SYSCODE_Сист._код : Column
+  } // BRSUBCAT : Browser
+  object WCATALOGS : InterfaceWindow {
+    Centered = True;
+    object SCRKATPODR : Screen {
+      object 'i_SCRKATPODR_CATALOGS.CODE' : PanelInputLine {
+        Protect = True;
+      } // i_SCRKATPODR_CATALOGS.CODE : PanelInputLine
+      object 'i_SCRKATPODR_CATALOGS.NAME' : PanelInputLine {
+        Protect = True;
+      } // i_SCRKATPODR_CATALOGS.NAME : PanelInputLine
+      object 'i_SCRKATPODR_CATALOGS.LONGNAME' : PanelInputLine {
+        Protect = True;
+      } // i_SCRKATPODR_CATALOGS.LONGNAME : PanelInputLine
+      object 'i_SCRKATPODR_CATALOGS.DATN' : PanelInputLine {
+        Skip = True;
+      } // i_SCRKATPODR_CATALOGS.DATN : PanelInputLine
+      object 'i_SCRKATPODR_CATALOGS.DATOK' : PanelInputLine {
+        Skip = True;
+      } // i_SCRKATPODR_CATALOGS.DATOK : PanelInputLine
+    } // SCRKATPODR : Screen
+    object SCRDEPFUNC : Screen {
+      object 'i_SCRDEPFUNC_CATALOGS.DATN' : PanelInputLine {
+        Skip = True;
+      } // i_SCRDEPFUNC_CATALOGS.DATN : PanelInputLine
+      object 'i_SCRDEPFUNC_CATALOGS.DATOK' : PanelInputLine {
+        Skip = True;
+      } // i_SCRDEPFUNC_CATALOGS.DATOK : PanelInputLine
+    } // SCRDEPFUNC : Screen
+  } // WCATALOGS : InterfaceWindow
+} // Z_STAFFCAT::PICKCATALOG2 : InterfaceWindow
+//-----------------------------------------------------------------------------

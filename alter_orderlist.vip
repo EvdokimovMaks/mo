@@ -1,0 +1,18 @@
+#component "Z_STAFFORDERS"
+
+alter interface ORDERSLIST;
+window WHATISINORDER
+handleevent
+cmDone:
+{
+  if TITLEDOC.DOCTEXT = '' then
+  {
+    message('Заполните пожалуйста поле "Краткое содержание"');
+    abort;
+  }
+  else
+    inherited::handleevent(cmDone);
+}
+end;
+end;
+end.

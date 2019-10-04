@@ -1,0 +1,15 @@
+#include replacequotes.vih
+#component "Z_STAFFORDERS"
+
+alter interface NFORMRD40;
+var
+  _RplQts: KADRY2::replacequotes;
+
+handleevent
+cmInit:
+{
+  inherited::handleevent(cmInit);
+  _RplQts.ReplaceQuotes(replace(translatepath(GetStringParameter('Files', 'OutputFilesDirectory', 0)+'\NformRD40.rtf'),'\\','\'));
+}
+end;
+end.

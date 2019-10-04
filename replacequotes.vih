@@ -1,0 +1,11 @@
+#ifndef __REPLACEQUOTES__
+#define __REPLACEQUOTES__
+#COMPONENT "KADRY2"
+
+objinterface iREPLACEQUOTES;
+  procedure ReplaceQuotes(filename: string);
+end;
+
+vipinterface replacequotes implements iREPLACEQUOTES;
+
+#end
